@@ -1,0 +1,19 @@
+/*
+Theme Name: Put your theme name here
+Author: Put your name here
+Author URI: Put your url here
+Version: 1.0
+*/
+
+/*
+This is where you will paste your compiled minified CSS styles from the LESS precompiler. Some precompilers will
+automatically update this file so you may not need to paste anything here.
+
+There are numerous precompilers out there I personally use WinLess (http://winless.org/)
+Once installed if you add the folder fisheye > default it will automatically use the CSS folder as the output folder. 
+The template hierarchy should be as follows:
+
+skin > frontend > mypackagename > default           (add this folder to the Winless gui)
+skin > frontend > mypackagename > default > less    (put all your .less files in here)
+skin > frontend > mypackagename > default > css     (WinLess will automatically compile your .less files into a file called styles.css)
+*/

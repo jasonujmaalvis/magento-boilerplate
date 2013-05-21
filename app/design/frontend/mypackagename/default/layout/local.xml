@@ -1,0 +1,121 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+	<default>
+        <!-- remove some items set in other .xml files we don't need -->
+		<remove name="right.poll" />
+        <remove name="right.permanent.callout" />
+        <remove name="left.permanent.callout" />        
+		<remove name="paypal.partner.right.logo" />
+        <remove name="tags_popular" />
+        <remove name="product_tag_list" />
+		<remove name="catalog.compare.sidebar" />
+        <remove name="checkout.cart.shipping" />            
+		<remove name="left.newsletter" />
+		<remove name="right.reports.product.viewed" />
+		<remove name="left.reports.product.viewed" />
+		<remove name="right.reports.product.compared" />                		
+        <remove name="cart_sidebar" />
+		<remove name="currency" />
+		<remove name="sale.reorder.sidebar" /> 
+		<remove name="wishlist_sidebar" />
+			
+		<reference name="head">
+            <!-- 
+            LESS implementation (http://lesscss.org/)... 
+            There are 2 ways to use LESS, either you embed a JavaScript file (less.js) to live transform your LESS code into CSS in your browser or you precompile your files into standard CSS. 
+            
+            For Development: 
+            Use the JavaScript file simply because a) it's lightning quick and b) if we used this in production mode it means there's an additional wait while the JavaScript engine
+            processes the .less files causing a delay which we could do without. The JavaScript file is included via the xml below.
+            
+            For Production: 
+            Use a precompiler tool which will transform your .less code into CSS which can be minified.. even better! Then we simply copy the minified CSS generated from the compiler 
+            and paste it into our styles.css file. Don't foget to comment out the xml points below and comment out the .less style sheets which are hard coded in
+            page > html > head.phtml
+            
+            Tip: During development use the very handy watch feature LESS comes with. It saves you from refreshing the browser and will automatically check for any changes in the .less files
+            and apply them in the browser without having to do anything. Simply make sure "#!watch" is appended at the end of the URL. It checks for changes every second (1000 miliseconds).
+            
+            Steps:
+            1. Write your LESS code
+            2. Compile it into a minified CSS file using a precompiler tool
+            3. Copy and paste the minified CSS into styles.css
+            4. When ready for production remove .less style sheet includes from page > html > head.phtml
+            5. Comment out the 2 lines marked below
+            -->    
+            
+            <!-- LESS: comment these 2 lines out when it's in production -->
+	        <action method="addItem"><type>skin_js</type><name>js/less.js</name><params/></action>
+	        <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+
+
+
+			<!-- remove some items set in the page.xml we don't need -->
+			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><if>lt IE 7</if></action>
+			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
+			<action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
+	        <action method="removeItem"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
+	
+    		<action method="addJs"><script>custom/jquery/jquery.min.js</script></action>   
+	        <action method="addItem"><type>skin_js</type><name>js/plugins.all.min.js</name><params/></action>
+	        <action method="addItem"><type>skin_js</type><name>js/modernizr.js</name><params/></action>
+		</reference>
+	
+		<reference name="root">
+			<block type="page/html_head" name="site.bottom.css.js" as="site.bottom.css.js" template="page/html/site-bottom-css-js.phtml">
+                <action method="addItem"><type>skin_js</type><name>js/custom/common.js</name></action>
+            </block>
+		</reference>
+	</default>
+
+	<cms_index_index>        
+        <!-- home.js -->
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/home.js</name></action>
+        </reference>
+    </cms_index_index>
+	
+	<catalog_category_default>
+        <reference name="root">
+            <action method="setTemplate"><template>page/category.phtml</template></action>
+        </reference>
+        
+        <!-- category.js -->
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
+        </reference>		
+	</catalog_category_default>	
+	
+	<catalog_category_layered>
+        <reference name="root">
+            <action method="setTemplate"><template>page/category.phtml</template></action>
+        </reference>
+        
+        <!-- category.js -->
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
+        </reference>	
+	</catalog_category_layered>
+	
+	<catalog_product_view>
+        <reference name="root">
+            <action method="setTemplate"><template>page/product.phtml</template></action>
+        </reference>
+        
+        <!-- product.js -->
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/product.js</name></action>
+        </reference>		
+	</catalog_product_view>
+	
+	<page_static>
+        <reference name="root">
+            <action method="setTemplate"><template>page/static.phtml</template></action>
+        </reference>
+        
+        <!-- static.js -->
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/static.js</name></action>
+        </reference>			
+	</page_static>
+</layout>
