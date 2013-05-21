@@ -1,4 +1,4 @@
-<h1>Magento-Boilerplate</h1>
+<h1>Magento Boilerplate</h1>
 
 Author: Jason Alvis<br />
 Author Email: alvis.jason@gmail.com<br />
