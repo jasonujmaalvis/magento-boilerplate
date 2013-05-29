@@ -73,11 +73,7 @@
         <!-- boilerplate includes an additional home page handler if needed -->
     </page_home>
 	
-    <cms_index_index>        
-        <reference name="root"> 
-            <action method="setTemplate"><template>page/home.phtml</template></action>
-        </reference>
-        
+    <cms_index_index>                
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/custom/home.js</name></action>
         </reference>
