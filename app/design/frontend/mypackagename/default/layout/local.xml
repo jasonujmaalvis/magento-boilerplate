@@ -68,52 +68,74 @@
 		</reference>
 	</default>
 
+    <!-- home page -->
 	<cms_index_index>        
-        <!-- home.js -->
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/custom/home.js</name></action>
         </reference>
     </cms_index_index>
 	
+    <!-- category (default) -->
 	<catalog_category_default>
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
         
-        <!-- category.js -->
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
         </reference>		
 	</catalog_category_default>	
 	
+    <!-- category (layered) -->
 	<catalog_category_layered>
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
         
-        <!-- category.js -->
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
         </reference>	
 	</catalog_category_layered>
+
+    <!-- catalog search results -->
+    <catalogsearch_result_index>
+        <reference name="root">
+            <action method="setTemplate"><template>page/category.phtml</template></action>
+        </reference>
+        
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
+        </reference>      
+    </catalogsearch_result_index>
+
+    <!-- catalog search results (advanced) -->    
+    <catalogsearch_advanced_result>
+        <reference name="root">
+            <action method="setTemplate"><template>page/category.phtml</template></action>
+        </reference>
+        
+		<reference name="site.bottom.css.js">
+            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
+        </reference>  
+    </catalogsearch_advanced_result>
 	
+    <!-- product page -->
 	<catalog_product_view>
         <reference name="root">
             <action method="setTemplate"><template>page/product.phtml</template></action>
         </reference>
         
-        <!-- product.js -->
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/custom/product.js</name></action>
         </reference>		
 	</catalog_product_view>
 	
+    <!-- static page -->
 	<page_static>
         <reference name="root">
             <action method="setTemplate"><template>page/static.phtml</template></action>
         </reference>
         
-        <!-- static.js -->
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/custom/static.js</name></action>
         </reference>			
