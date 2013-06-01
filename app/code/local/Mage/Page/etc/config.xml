@@ -75,16 +75,6 @@
                     <template>page/home.phtml</template>
                     <layout_handle>page_home</layout_handle>
                 </home>
-				<category module="page" translate="label">
-                    <label>Category</label>
-                    <template>page/category.phtml</template>
-                    <layout_handle>page_category</layout_handle>
-                </category>
-				<product module="page" translate="label">
-                    <label>Product</label>
-                    <template>page/product.phtml</template>
-                    <layout_handle>page_product</layout_handle>
-                </product>
 				<static module="page" translate="label">
                     <label>Static</label>
                     <template>page/static.phtml</template>
