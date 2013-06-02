@@ -13,8 +13,8 @@ Starting a Magento project the right way is a must for any developer. This proje
 <h3>Custom Templates</h3>
 It includes custom templates for the home page, category, product and static pages. The category and product pages are already set in local.xml. You can set the home page and any CMS static pages to their corresponding custom template via the admin panel under CMS > Pages. Select the page in question and in the design tab select the layout from the drop down field.
 <ul>
-<li>home.phtml</li>
-<li>static.phtml</li>
+<li>Home = home.phtml</li>
+<li>Static = static.phtml</li>
 </ul>
 
 <h3>Removes default xml blocks</h3>
