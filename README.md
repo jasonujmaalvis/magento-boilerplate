@@ -1,7 +1,7 @@
 <h1>Magento Boilerplate</h1>
 
 Author: Jason Alvis<br />
-Author Email: alvis.jason@gmail.com<br />
+Author Email: hello@jasonalvis.co.uk<br />
 Version: 1.0.0<br />
 License: Free General Public License (GPL)<br />
 
