@@ -44,7 +44,7 @@ It includes LESS CSS as default, if your new to this I would highly recommend ch
 Normalize.css is included making browsers render all elements more consistently. It is included via the import method in the styles.less file. For more information on normalize please head over to their website http://necolas.github.io/normalize.css/
 
 <h2>Installation</h2>
-Drop in the templates app and skin within your Magento hierarchy e.g:<br />
+Drop in the templates app, js and skin within your Magento hierarchy e.g:<br />
 magento > public_html > app<br />
 magento > public_html > js<br />
 magento > public_html > skin<br /><br />
