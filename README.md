@@ -2,7 +2,7 @@
 
 Author: Jason Alvis<br />
 Author Email: hello@jasonalvis.co.uk<br />
-Version: 1.0.0<br />
+Version: 1.0.1<br />
 License: Free General Public License (GPL)<br />
 
 <h2>Brief</h2>
@@ -39,6 +39,9 @@ There is also an all rounder plugin js file (plugins.all.min.js) whereby you can
 
 <h3>LESS CSS Included</h3>
 It includes LESS CSS as default, if your new to this I would highly recommend checking it out by visiting their website http://lesscss.org/. If you don't want to use LESS it can be removed very easily within local.xml and head.phtml
+
+<h3>Normalize.css</h3>
+Normalize.css is included making browsers render all elements more consistently. It is included via the import method in the styles.less file. For more information on normalize please head over to their website http://necolas.github.io/normalize.css/
 
 <h2>Installation</h2>
 Drop in the templates app and skin within your Magento hierarchy e.g:<br />

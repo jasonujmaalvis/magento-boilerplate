@@ -2,94 +2,104 @@
 Theme Name: Put your theme name here
 Author: Put your name here
 Author URI: Put your url here
-Version: 1.0.0
+Version: 1.0.1
 */
 
-/* html5doctor.com Reset v1.6.1 - http://cssreset.com */
-html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}nav ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}
+// Normalise (reset)
+@import "../tools/normalize.css";
 
-
-/* ========================================================== 
- * Test parameters, you can remove these, they are just  
- * here to prove it works!
+/* ==========================================================
+ * Variables
  * ======================================================= */
-@color: #222;
-@background-color: #fff;
-body                                { background: @background-color !important; color: @color !important; }
+// Fonts
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
+@fontFamilyOne:         'Open Sans', 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+@fontWeight400:         400;
+@fontWeight600:         600;
+
+// Colors
+@colorWhite:            #fff;
+@colorGreyOne:          #515151;
+@colorGreyTwo:          #7e7e7e;
+@colorDarkOne:          #262626;
+
+// Layout
+@siteWidth:             965px;
+
+// Tools
+@alignCenter:           center;
+@alignLeft:             left;
+@alignRight:            right;
+@alignTop:              top;
+@alignBottom:           bottom;
+@alignMiddle:           middle;
 
 
-/* ========================================================== 
+/* ==========================================================
  * BASE STYLES
  * ======================================================= */
-body, select, input, textarea 		{ color:#232426; font-family:Arial, Helvetica, sans-serif; font-size:12px; }
-h1,h2,h3,h4,h5,h6 					{ font-weight:normal; }
-ul									{ list-style:none; }
-html 								{ overflow-y: scroll; }
-a:hover, a:active 					{ outline: none; }
-a, a:active, a:visited 				{ color:#232426; text-decoration:none; -moz-transition:color 0.1s linear 0s; -webkit-transition:color 0.1s linear 0s; -o-transition:color 0.1s linear 0s; }  
-a:hover 							{ color:#EA4848; }
-a:link 								{ -webkit-tap-highlight-color: #FF5E99; } 
-small 								{ font-size: 85%; }
-strong								{ font-weight: bold; }
-pre 								{ padding: 15px;  white-space: pre; white-space: pre-wrap; white-space: pre-line; word-wrap: break-word; }
-textarea 							{ overflow: auto; }
-input[type="radio"] 				{ vertical-align: text-bottom; }
-input[type="checkbox"] 				{ vertical-align: bottom; }
-.ie7 input[type="checkbox"] 		{ vertical-align: baseline; }
-.ie6 input 							{ vertical-align: text-bottom; }
-button, input, select, textarea 	{ margin: 0; }
-button 								{ width: auto; overflow: visible; }
-.ie7 img 							{ -ms-interpolation-mode: bicubic; }
+body, select, input, textarea    { color:@colorGreyOne; font-family:@fontFamilyOne; font-weight:@fontWeight400; font-size:12px; }
+h1,h2,h3,h4,h5,h6                { font-weight:@fontWeight400; }
+html                             { overflow-y: scroll; }
+a:hover, a:active                { outline: none; }
+a, a:active, a:visited           { color:#232426; text-decoration:none; -moz-transition:color 0.1s linear 0s; -webkit-transition:color 0.1s linear 0s; -o-transition:color 0.1s linear 0s; }
+a:hover                          { color:#EA4848; }
+a:link                           { -webkit-tap-highlight-color: #FF5E99; }
+small                            { font-size: 85%; }
+ul                               { list-style:none; margin:0; padding:0; }
 
-/* ========================================================== 
+
+/* ==========================================================
  * TOOLS
  * ======================================================= */
-.highlight							{ color:#EA4848; }
-.hidden      						{ display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }
-.nobr         						{ white-space:nowrap !important; }
-.wrap         						{ white-space:normal !important; }
-.a-left       						{ text-align:left !important; }
-.a-center     						{ text-align:center !important; }
-.a-right      						{ text-align:right !important; }
-.v-top        						{ vertical-align:top; }
-.v-middle     						{ vertical-align:middle; }
+.highlight                       { color:#EA4848; }
+.hidden                          { display:block !important; border:0 !important; margin:0 !important; padding:0 !important; font-size:0 !important; line-height:0 !important; width:0 !important; height:0 !important; overflow:hidden !important; }
+.nobr                            { white-space:nowrap !important; }
+.wrap                            { white-space:normal !important; }
+.a-left                          { text-align:@alignLeft !important; }
+.a-center                        { text-align:@alignCenter !important; }
+.a-right                         { text-align:@alignRight !important; }
+.v-top                           { vertical-align:@alignTop; }
+.v-middle                        { vertical-align:@alignMiddle; }
 .f-left,
-.left         						{ float:left !important; }
+.left                            { float:@alignLeft !important; }
 .f-right,
-.right        						{ float:right !important; }
-.f-none       						{ float:none !important; }
-.f-fix        						{ float:left; width:100%; }
-.no-display   						{ display:none; }
-.no-margin    						{ margin:0 !important; }
-.no-padding   						{ padding:0 !important; }
-.no-bg        						{ background:none !important; }
+.right                           { float:@alignRight !important; }
+.f-none                          { float:none !important; }
+.f-fix                           { float:@alignLeft; width:100%; }
+.no-display                      { display:none; }
+.no-margin                       { margin:0 !important; }
+.no-padding                      { padding:0 !important; }
+.no-bg                           { background:none !important; }
 
-.clearfix:after 					{ clear: both; content: "."; display: block; height: 0; visibility: hidden; }
-.clearfix 							{ display: inline-block; }
-.clearfix 							{ display: block; }
+.clearfix:after                  { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+.clearfix                        { display: inline-block; }
+.clearfix                        { display: block; }
 
-/* ========================================================== 
+
+/* ==========================================================
  * LAYOUT
  * ======================================================= */
-.page    							{ background: #fff; margin:0 auto; width: 958px; }
-.page-print 						{ background:#fff; padding:25px 30px; text-align:left; }
-.page-empty 						{ background:#fff; padding:20px; text-align:left; }
-.page-popup 						{ background:#fff; padding:25px 30px; text-align:left; }
-.main-container 					{ }
-.main 								{ width:898px; margin:0 auto; min-height:400px; text-align:left; }
-.sidebar 							{} 
+.page                            { background:@colorWhite; margin:0 auto; width: @siteWidth; }
+.page-print                      { background:@colorWhite; padding:25px 30px; text-align:@alignLeft; }
+.page-empty                      { background:@colorWhite; padding:20px; text-align:@alignLeft; }
+.page-popup                      { background:@colorWhite; padding:25px 30px; text-align:@alignLeft; }
+.main-container                  { }
+.main                            { width:898px; margin:0 auto; min-height:400px; text-align:@alignLeft; }
+.sidebar                         {}
 
 /* Base Columns */
-.col-left 							{ float:left; width:195px; padding:0 0 1px; }
-.col-main 							{ float:left; width:687px; padding:0px; }
-.col-right 							{ float:right; width:195px; padding:0 0 1px; }
+.col-left                        { float:@alignLeft; width:195px; padding:0 0 1px; }
+.col-main                        { float:@alignLeft; width:687px; padding:0px; }
+.col-right                       { float:@alignRight; width:195px; padding:0 0 1px; }
 
 /* 1 Column Layout */
-.col1-layout .col-main 				{ float:none; width:auto; }
+.col1-layout .col-main           { float:none; width:auto; }
 
 /* 2 Columns Layout */
-.col2-left-layout .col-main 		{ float:right; }
-.col2-right-layout .col-main 		{}
+.col2-left-layout .col-main      { float:@alignRight; }
+.col2-right-layout .col-main     {}
 
 /* 3 Columns Layout */
 .col3-layout .col-main 				{ width:475px; margin-left:15px; }
@@ -97,19 +107,19 @@ button 								{ width: auto; overflow: visible; }
 .col3-layout .col-wrapper .col-main { float:right; }
 
 /* Content Columns */
-.col2-set .col-1 					{ float:left; width:48.5%; }
-.col2-set .col-2 					{ float:right; width:48.5%; }
-.col2-set .col-narrow 				{ width:32%; }
-.col2-set .col-wide 				{ width:65%; }
+.col2-set .col-1                 { float:@alignLeft; width:48.5%; }
+.col2-set .col-2                 { float:@alignRight; width:48.5%; }
+.col2-set .col-narrow            { width:32%; }
+.col2-set .col-wide              { width:65%; }
 
-.col3-set .col-1 					{ float:left; width:32%; }
-.col3-set .col-2 					{ float:left; width:32%; margin-left:2%; }
-.col3-set .col-3 					{ float:right; width:32%; }
+.col3-set .col-1                 { float:@alignLeft; width:32%; }
+.col3-set .col-2                 { float:@alignLeft; width:32%; margin-left:2%; }
+.col3-set .col-3                 { float:@alignRight; width:32%; }
 
-.col4-set .col-1 					{ float:left; width:23.5%; }
-.col4-set .col-2 					{ float:left; width:23.5%; margin:0 2%; }
-.col4-set .col-3 					{ float:left; width:23.5%; }
-.col4-set .col-4 					{ float:right; width:23.5%; }
+.col4-set .col-1                 { float:@alignLeft; width:23.5%; }
+.col4-set .col-2                 { float:@alignLeft; width:23.5%; margin:0 2%; }
+.col4-set .col-3                 { float:@alignLeft; width:23.5%; }
+.col4-set .col-4                 { float:@alignRight; width:23.5%; }
 
 /* ========================================================== 
  * GLOBAL
