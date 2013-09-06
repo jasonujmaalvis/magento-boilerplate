@@ -48,7 +48,7 @@ Respond: https://github.com/scottjehl/Respond<br />
 Selectivizr: http://selectivizr.com/
 
 <h3>LESS CSS Included</h3>
-This can be optionally included from within local.xml along with instructions on how to implement it.
+This can optionally be included from within local.xml along with instructions on how to implement it.
 
 LESS CSS: http://lesscss.org/
 
