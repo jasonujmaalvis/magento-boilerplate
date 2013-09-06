@@ -18,52 +18,56 @@
 		<remove name="currency" />
 		<remove name="sale.reorder.sidebar" /> 
 		<remove name="wishlist_sidebar" />
-			
-		<reference name="head">
-            <!-- 
-            LESS implementation (http://lesscss.org/)... 
-            There are 2 ways to use LESS, either you embed a JavaScript file (less.js) to live transform your LESS code into CSS in your browser or you precompile your files into standard CSS. 
-            
-            For Development: 
-            Use the JavaScript file simply because a) it's lightning quick and b) if we used this in production mode it means there's an additional wait while the JavaScript engine
-            processes the .less files causing a delay which we could do without. The JavaScript file is included via the xml below.
-            
-            For Production: 
-            Use a precompiler tool which will transform your .less code into CSS which can be minified.. even better! Then we simply copy the minified CSS generated from the compiler 
-            and paste it into our styles.css file. Don't foget to comment out the xml points below and comment out the .less style sheets which are hard coded in
-            page > html > head.phtml
-            
-            Tip: During development use the very handy watch feature LESS comes with. It saves you from refreshing the browser and will automatically check for any changes in the .less files
-            and apply them in the browser without having to do anything. Simply make sure "#!watch" is appended at the end of the URL. It checks for changes every second (1000 miliseconds).
-            
-            Steps:
-            1. Write your LESS code
-            2. Compile it into a minified CSS file using a precompiler tool
-            3. Copy and paste the minified CSS into styles.css
-            4. When ready for production remove .less style sheet includes from page > html > head.phtml
-            5. Comment out the 2 lines marked below
-            -->    
-            
-            <!-- LESS: comment these 2 lines out when it's in production -->
-	        <action method="addItem"><type>skin_js</type><name>js/less.js</name><params/></action>
-	        <action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
-
-
-
-			<!-- remove some items set in the page.xml we don't need -->
-			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><if>lt IE 7</if></action>
-			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
+					
+		<reference name="head">            
+			<!-- remove some items set in the page.xml we don't need. if you want to add any back in simply remove them. -->
+            <action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
+            <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>              
 			<action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
-	        <action method="removeItem"><stylesheet>css/print.css</stylesheet><params>media="print"</params></action>
-	
-    		<action method="addJs"><script>custom/jquery/jquery.min.js</script></action>   
-	        <action method="addItem"><type>skin_js</type><name>js/plugins.all.min.js</name><params/></action>
-	        <action method="addItem"><type>skin_js</type><name>js/modernizr.js</name><params/></action>
+			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><if>lt IE 7</if></action>       
+            <action method="removeItem"><type>js</type><name>scriptaculous/builder.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/dragdrop.js</name></action>
+            <action method="removeItem"><type>js</type><name>scriptaculous/slider.js</name></action>
+            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>        
+			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
+
+			<!-- add some items -->
+			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lt IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/selectivizr.min.js</name><params/><if>lt IE 8</if></action>
+	        <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.min.js</name><params/></action>
+
+			<!-- 
+			LESS js available if needed e.g not working localhost
+			
+			The idea behind LESS is to speed up and simplify only the development step. 
+			This means what goes live on your final website should be plain old CSS, not LESS.
+
+			After you’re finished working on your site, you need only compile the LESS into CSS and copy and paste it into styles.css
+			
+			While using LESS js you need to remove the normal CSS stylesheet and include less.min.js. As well as manually
+			adding your LESS styles within head.phtml using the rel="stylesheet/less" like this : 
+			
+			<link rel="stylesheet/less" type="text/css" href="<?php echo $this->getSkinUrl('less/styles.less'); ?>" />
+			
+			(unfortunately magento doesn't have the ability to change the rel tag in xml so it has to be hard coded... nasty!)
+			--> 
+	        
+	        <!--
+			<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
+	        <action method="addItem"><type>skin_js</type><name>js/less.min.js</name><params/></action>
+	        -->
 		</reference>
-	
+	 
 		<reference name="root">
 			<block type="page/html_head" name="site.bottom.css.js" as="site.bottom.css.js" template="page/html/site-bottom-css-js.phtml">
-                <action method="addItem"><type>skin_js</type><name>js/custom/common.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/jquery.1.7.2.min.js</name></action> 
+                
+                <!-- include jquery.run.js where you will put your js for the entire store (only use in development) -->
+                <action method="addItem"><type>skin_js</type><name>js/jquery.run.js</name></action>
+                
+                <!-- minify jquery.run.js and put the code in jquery.run.min.js then comment out the reference above (only use in production) -->
+                <!-- <action method="addItem"><type>skin_js</type><name>js/jquery.run.min.js</name></action> -->
             </block>
 		</reference>
 	</default>
@@ -74,9 +78,12 @@
     </page_home>
 	
     <cms_index_index>                
+        <!-- add specific js files for certain pages if necessary -->
+        <!--        
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/home.js</name></action>
-        </reference>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.home.js</name></action>
+        </reference>  
+        --> 
     </cms_index_index>
 	
     <!-- category (default) -->
@@ -85,9 +92,12 @@
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
         
+        <!-- add specific js files for certain pages if necessary -->
+        <!--
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
-        </reference>		
+            <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
+        </reference>
+        -->
 	</catalog_category_default>	
 	
     <!-- category (layered) -->
@@ -95,10 +105,13 @@
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
-        
+
+        <!-- add specific js files for certain pages if necessary -->
+        <!--        
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
         </reference>	
+        -->
 	</catalog_category_layered>
 
     <!-- catalog search results -->
@@ -106,10 +119,13 @@
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
-        
+
+        <!-- add specific js files for certain pages if necessary -->
+        <!--        
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
-        </reference>      
+            <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
+        </reference>  
+        -->    
     </catalogsearch_result_index>
 
     <!-- catalog search results (advanced) -->    
@@ -117,10 +133,13 @@
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
-        
+
+        <!-- add specific js files for certain pages if necessary -->
+        <!--        
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/category.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
         </reference>  
+        -->
     </catalogsearch_advanced_result>
 	
     <!-- product page -->
@@ -128,10 +147,13 @@
         <reference name="root">
             <action method="setTemplate"><template>page/product.phtml</template></action>
         </reference>
-        
+
+        <!-- add specific js files for certain pages if necessary -->
+        <!--        
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/product.js</name></action>
-        </reference>		
+            <action method="addItem"><type>skin_js</type><name>js/jquery.product.js</name></action>
+        </reference>
+        -->		
 	</catalog_product_view>
 	
     <!-- static page -->
@@ -139,9 +161,12 @@
         <reference name="root">
             <action method="setTemplate"><template>page/static.phtml</template></action>
         </reference>
-        
+
+        <!-- add specific js files for certain pages if necessary -->
+        <!--        
 		<reference name="site.bottom.css.js">
-            <action method="addItem"><type>skin_js</type><name>js/custom/static.js</name></action>
-        </reference>			
+            <action method="addItem"><type>skin_js</type><name>js/jquery.static.js</name></action>
+        </reference>
+        -->			
 	</page_static>
 </layout>
