@@ -58,7 +58,7 @@ Normalize.css is included making browsers render all elements more consistently.
 Normalize: http://necolas.github.io/normalize.css/
 
 <h2>Installation</h2>
-Drop in the templates app and skin within your Magento hierarchy e.g:<br /><br />
+Drop in the directories app and skin within your Magento hierarchy e.g:<br /><br />
 magento > public_html > app<br />
 magento > public_html > skin<br /><br />
 You will then need to rename the "mypackagename" to a name of your choice in both the app and skin directories. Then you will need to change the package name in the admin panel to render the new package you have just installed (system > configuration > design > package).
