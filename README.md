@@ -24,8 +24,7 @@ Magento by default bundles a handful of xml blocks that are rarely used and only
 Note: They can be added back in if you need them by simply removing the line of code from local.xml.
 
 <h3>Removes unnecessary JS files that are rarely used</h3>
-Magento by default bundles a handful of JS files that are rarely used and only causes bloat/performance issues, so I removed them from within local.xml.<br />
-Note: They can be added back in if you need them by simply removing the line of code from local.xml.
+Magento by default bundles a handful of JS files that are rarely used and only causes bloat/performance issues, so I removed them from within local.xml.<br /><br />Note: They can be added back in if you need them by simply removing the line of code from local.xml.
 
 <h3>Includes jQuery in no conflict mode</h3>
 jQuery 1.7.2 minified in no conflict mode is included as default, you can change this to include the latest version of jQuery if you wish. It gets included at the very bottom of the dom just like it should be.<br />This improves performance issues particularly on mobile devices as when a browser hits a script tag it actually waits for that entire asset to download before it proceeds, if it's in the head your going to block everything that renders visually on your page from starting.
