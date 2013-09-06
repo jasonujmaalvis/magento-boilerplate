@@ -52,8 +52,8 @@ This can optionally be included from within local.xml along with instructions on
 
 LESS CSS: http://lesscss.org/
 
-<h3>Normalize.css</h3>
-Normalize.css is included making browsers render all elements more consistently. It is included via the import method.
+<h3>Normalize</h3>
+Normalize is included making browsers render all elements more consistently. It is included via the import method.
 
 Normalize: http://necolas.github.io/normalize.css/
 
