@@ -32,7 +32,7 @@ jQuery 1.7.2 minified in no conflict mode is included as default, you can change
 This improves performance issues particularly on mobile devices as when a browser hits a script tag it actually waits for that entire asset to download before it proceeds, if it's in the head your going to block everything that renders visually on your page from starting.
 
 <h3>Optional custom jQuery files per template</h3>
-The boilerplate comes with jquery.run.js which is where you should put all your custom jQuery. Optionally within local.xml it has the ability to include a specific JS file for a particular page, great for specifying jQuery that is only to be rendered on certain pages.
+The boilerplate comes with jquery.run.min.js which is where you should put all your custom jQuery. Optionally within local.xml it has the ability to include a specific JS file for a particular page, great for specifying jQuery that is only to be rendered on certain pages.
 <ul>
 <li>jquery.run.min.js (included on every page)</li>
 <li>jquery.home.js (optional - included on the home page only)</li>
