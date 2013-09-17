@@ -32,9 +32,9 @@
 			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
 
 			<!-- add some items -->
-			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lt IE 8</if></action>
-			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 8</if></action>
-			<action method="addItem"><type>skin_js</type><name>js/selectivizr.min.js</name><params/><if>lt IE 8</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lt IE 9</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 9</if></action>
+			<action method="addItem"><type>skin_js</type><name>js/selectivizr.min.js</name><params/><if>lt IE 9</if></action>
 	        <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.min.js</name><params/></action>
 
 			<!-- 
