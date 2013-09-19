@@ -1,0 +1,51 @@
+// Base
+// --------------------------------------------------
+
+body, 
+select, 
+input, 
+textarea {
+	font-family:$fontFamilyOne; 
+	font-weight:$fontWeight400; 
+	font-size:12px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { 
+	font-weight:$fontWeight400;
+}
+
+html { 
+	overflow-y: scroll;
+}
+
+a:hover, 
+a:active { 
+	outline: none;
+}
+
+a, 
+a:active, 
+a:visited { 
+	color:#232426; 
+	text-decoration:none; 
+	-moz-transition:color 0.1s linear 0s; 
+	-webkit-transition:color 0.1s linear 0s;
+	-o-transition:color 0.1s linear 0s;
+}
+
+a:hover { 
+	color:#EA4848;
+}
+
+a:link { 
+	-webkit-tap-highlight-color: #FF5E99;
+}
+
+small { 
+	font-size: 85%;
+}

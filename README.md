@@ -47,15 +47,12 @@ Html5shiv: http://code.google.com/p/html5shiv/<br />
 Respond: https://github.com/scottjehl/Respond<br />
 Selectivizr: http://selectivizr.com/
 
-<h3>LESS CSS Included</h3>
-This can optionally be included from within local.xml along with instructions on how to implement it.
-
-LESS CSS: http://lesscss.org/
-
-<h3>Normalize</h3>
-Normalize is included making browsers render all elements more consistently. It is included via the import method.
-
-Normalize: http://necolas.github.io/normalize.css/
+<h3>SASS / Compass Included</h3>
+This can optionally be used, I would highly recommend you use it, it must be a localhost setup to benefit the advantages. If your new to it please checkout the links below.<br /><br />
+Theres a whole bunch on compilers available, all down to personal preference, they will save you heaps of work, I would recommend Mac users to take a look at Codekit or for Windows users have a look at Prepros.<br /><br />
+Explainig how to set this is is beyond the scope of this readme, please refer to the compilers documentation, each one is different.<br /><br />
+SASS: http://sass-lang.com/
+Compass: http://compass-style.org/
 
 <h2>Installation</h2>
 Drop in the directories app and skin within your Magento hierarchy e.g:<br /><br />

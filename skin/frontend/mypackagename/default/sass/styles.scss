@@ -1,0 +1,45 @@
+/**
+* Website name here
+* Website URL here
+*
+* @author Author name here
+* @package mypackagename_default
+*
+*/ 
+
+// Compass add ons   
+// --------------------------------------------------
+@import "compass";				// Lets you use compass
+@import "compass/reset";		// Pulls in compass reset
+
+// Custom imports
+// --------------------------------------------------
+@import "fonts";				// Fonts
+@import "variables";			// Variables
+@import "tools";				// Tools
+@import "base";					// Base
+@import "layout";				// Layout
+
+@import "navigation";			// Navigation
+@import "header";				// Header
+@import "footer";				// Footer
+
+@import "global";				// Global
+@import "messages";				// Messages
+@import "prices";				// Prices
+@import "tables";				// Tables
+@import "forms";				// Forms
+@import "content";				// Content
+@import "sidebar";				// Sidebar
+@import "blocks";				// Blocks
+@import "toolbar";				// Toolbar
+
+@import "home";					// Home
+@import "category";				// Category
+@import "product";				// Product
+
+@import "cart";					// Cart
+@import "checkout";				// Checkout
+@import "account";				// Account
+
+@import "clears";				// Clears

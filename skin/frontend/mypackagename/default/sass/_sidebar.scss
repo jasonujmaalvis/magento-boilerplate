@@ -1,0 +1,85 @@
+// Sidebar
+// --------------------------------------------------
+.block { 
+	margin:0 0 15px;
+
+	.block-title { 
+		border-bottom:1px solid #ddd; 
+		padding:0px 9px 2px 0px;
+
+		strong { 
+			display:block; 
+			font:bold 12px/16px Arial, Helvetica, sans-serif; 
+			min-height:16px; 
+			padding:1px 0 1px; 
+			text-transform:uppercase;
+		}
+	}
+	
+	.block-subtitle { 
+		margin:0; 
+		padding:5px 0px; 
+		font-size:1em; 
+		font-weight:bold;
+	}
+
+	.block-content li.item { 
+		padding:7px 9px;
+	}
+
+	.btn-remove { 
+		float:right; 
+		margin:1px 0 2px 5px;
+	}
+
+	.actions { 
+		padding:6px 9px; 
+		text-align:right;
+
+		a { 
+			float:left;
+		}
+		
+		button.button { 
+			float:right;
+		}
+	}
+
+	.empty { 
+		margin:0; 
+		padding:5px 0px;
+	}
+}
+
+// Mini Blocks
+// --------------------------------------------------
+.block-cart,
+.block-wishlist,
+.block-subscribe,
+.block-compare,
+.block-reorder,
+.block-poll,
+.block-viewed,
+.block-compared,
+.block-related,
+.block-tags,
+.block-login { 
+	font-size:11px; 
+	line-height:1.25; 
+}
+
+.block-cart .block-title strong,
+.block-wishlist .block-title strong,
+.block-subscribe .block-title strong,
+.block-compare .block-title strong,
+.block-reorder .block-title strong,
+.block-poll .block-title strong,
+.block-viewed .block-title strong,
+.block-compared .block-title strong,
+.block-related .block-title strong,
+.block-tags .block-title strong,
+.block-login .block-title strong { 
+	background-position:0 0; 
+	background-repeat:no-repeat; 
+	padding-left:0px;
+}

@@ -1,0 +1,86 @@
+// Tables
+// --------------------------------------------------
+.data-table { 
+	width:100%;
+
+	td.last,
+	th.last { 
+		border-right:0;
+	}
+
+	tr.last th,
+	tr.last td { 
+		border-bottom:0 !important;
+	}
+
+	th { 
+		padding:3px 8px; 
+		font-weight:bold;
+	}
+
+	td { 
+		padding:3px 8px;
+	}
+	
+	thead th { 
+		font-weight:bold; 
+		padding:2px 8px; 
+		white-space:nowrap; 
+		vertical-align:middle; 
+	}
+	
+	thead th.wrap { 
+		white-space:normal;
+	}
+	
+	thead th .tax-flag { 
+		font-size:11px; 
+		white-space:nowrap; 
+	}
+	
+	tfoot { 
+		border-bottom:1px solid #d9dde3;
+
+		td { 
+			padding-top:1px; 
+			padding-bottom:1px; 
+			border-bottom:0; 
+			border-right:1px solid #d9dde3;
+		}
+		
+		strong { 
+			font-size:16px;
+		}
+	}
+}
+
+// Bundle products tables
+// --------------------------------------------------
+.data-table {
+	tbody.odd tr { 
+		background:#f8f7f5 !important;
+	}
+
+	tbody.even tr { 
+		background:#f6f6f6 !important;
+	}
+
+	tbody.odd tr td,
+	tbody.even tr td { 
+		border-bottom:0;
+	}
+
+	tbody.odd tr.border td,
+	tbody.even tr.border td { 
+		border-bottom:1px solid #d9dde3;
+	}
+
+	tbody td .option-label { 
+		font-weight:bold; 
+		font-style:italic; 
+	}
+	
+	tbody td .option-value { 
+		padding-left:10px;
+	}
+}

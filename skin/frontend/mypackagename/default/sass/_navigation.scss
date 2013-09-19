@@ -1,0 +1,55 @@
+// Navigation
+// --------------------------------------------------
+.nav-container 						{ float: left;width: 100%;background: #F7F7F7;margin-bottom:10px;}
+#nav 								{ float:left; margin:12px 0 0 29px; font-size:12px; }
+
+// All Levels - Style consistent throughout all nav levels
+// --------------------------------------------------
+#nav li								{ position:relative;text-transform:uppercase; text-align:left;	}
+#nav li.over 						{ z-index:998; }
+#nav a,
+#nav a:hover 						{ display:block; line-height:1.3em; text-decoration:none; }
+#nav span 							{ display:block; cursor:pointer; white-space:nowrap; }
+#nav li ul span 					{ white-space:normal; }
+
+// 0 Level
+// --------------------------------------------------
+#nav li 							{ float:left; margin:1px 8px 11px 1px; padding:3px 8px; }
+#nav li.active a 					{ color:#444; }
+#nav a 								{ float:left; padding-right:11px; color:#444; font-weight:bold; }
+#nav li.over a,
+#nav a:hover 						{ color:#444; }
+#nav li.over,
+#nav li.active						{ margin:0 7px 10px 0; border:1px solid #bbb; background:#ececec; }
+
+// 1st Level
+// --------------------------------------------------
+#nav ul li,
+#nav ul li.active,
+#nav ul li.over 					{ float:none; border:none; background:none; margin:0; padding:0; padding-bottom:1px; text-transform:none; }
+#nav ul li.last 					{ padding-bottom:0; }
+#nav ul li.active 					{ margin:0; border:0; background:none; }
+#nav ul a,
+#nav ul a:hover 					{ float:none; padding:0; background:none; }
+#nav ul li a 						{ font-weight:normal !important; }
+
+// 2nd Level
+// --------------------------------------------------
+#nav ul,
+#nav div 							{ position:absolute; width:15em; top:22px; left:-10000px; border:1px solid #bbb; border-bottom:2px solid #999; padding:3px 8px; background:#fcfcfc; font-size:11px; }
+#nav div ul 						{ position:static; width:auto; border:none; padding:0; }
+
+// 3rd+ Level
+// --------------------------------------------------
+#nav ul ul,
+#nav ul div 						{ top:5px; }
+
+#nav ul li a 						{ padding:3px 0; color:#444 !important; }
+#nav ul li a:hover 					{ padding:3px 0; color:#5a7f00 !important; }
+
+// Show menu
+// --------------------------------------------------
+#nav li ul.shown-sub,
+#nav li div.shown-sub 				{ left:-1px; z-index:999; }
+#nav li .shown-sub ul.shown-sub,
+#nav li .shown-sub li div.shown-sub { left:100px; }

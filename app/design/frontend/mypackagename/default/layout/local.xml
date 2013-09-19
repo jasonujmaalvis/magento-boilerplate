@@ -36,27 +36,6 @@
 			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 9</if></action>
 			<action method="addItem"><type>skin_js</type><name>js/selectivizr.min.js</name><params/><if>lt IE 9</if></action>
 	        <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.min.js</name><params/></action>
-
-			<!-- 
-			LESS js available if needed e.g not working localhost
-			
-			The idea behind LESS is to speed up and simplify only the development step. 
-			This means what goes live on your final website should be plain old CSS, not LESS.
-
-			After you’re finished working on your site, you need only compile the LESS into CSS and copy and paste it into styles.css
-			
-			While using LESS js you need to remove the normal CSS stylesheet and include less.min.js. As well as manually
-			adding your LESS styles within head.phtml using the rel="stylesheet/less" like this : 
-			
-			<link rel="stylesheet/less" type="text/css" href="<?php echo $this->getSkinUrl('less/styles.less'); ?>" />
-			
-			(unfortunately magento doesn't have the ability to change the rel tag in xml so it has to be hard coded... nasty!)
-			--> 
-	        
-	        <!--
-			<action method="removeItem"><type>skin_css</type><name>css/styles.css</name></action>
-	        <action method="addItem"><type>skin_js</type><name>js/less.min.js</name><params/></action>
-	        -->
 		</reference>
 	 
 		<reference name="root">
