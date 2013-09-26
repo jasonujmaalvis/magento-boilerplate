@@ -42,7 +42,7 @@ The boilerplate comes with jquery.run.min.js which is where you should put all y
 </ul>
 
 <h3>HTML5 / CSS3 / Media queries ready</h3>
-Ready to use HTML5 tags, CSS3 selectors and media queries. Modernizr is included by default. If later than IE8 html5shiv.js, respond.min.js and selectivizr.min.js gets included.<br /><br />
+Ready to use HTML5 tags, CSS3 selectors and media queries. Modernizr is included by default. If later than IE9 html5shiv.js, respond.min.js and selectivizr.min.js gets included.<br /><br />
 Html5shiv: http://code.google.com/p/html5shiv/<br />
 Respond: https://github.com/scottjehl/Respond<br />
 Selectivizr: http://selectivizr.com/
