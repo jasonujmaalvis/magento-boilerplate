@@ -3,7 +3,7 @@
 * Website URL here
 *
 * @author Author name here
-* @package mypackagename_default
+* @package mypackagename_default  
 *
 */ 
 
@@ -41,5 +41,7 @@
 @import "cart";					// Cart
 @import "checkout";				// Checkout
 @import "account";				// Account
+
+@import "mediaqueries";			// Media Queries
 
 @import "clears";				// Clears
