@@ -4,7 +4,7 @@
 * Website URL here
 *
 * @author Author name here
-* @package mypackagename_default  
+* @package mypackagename_default
 *
 */
 html, body, div, span, applet, object, iframe,
@@ -53,6 +53,79 @@ a img {
 
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block; }
+
+body,
+button,
+input,
+select,
+table,
+textarea {
+  font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: #232323; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.container {
+  padding: 0 30px;
+  margin: 0 auto; }
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1230px; } }
+
+.column-group {
+  *zoom: 1; }
+
+.column-group:before,
+.column-group:after {
+  display: table;
+  content: "";
+  line-height: 0; }
+
+.column-group:after {
+  clear: both; }
+
+.column-group {
+  list-style-type: none;
+  padding: 0;
+  margin: 0; }
+
+.column-group > .column-group {
+  clear: none;
+  float: left;
+  margin: 0 !important; }
+
+.column {
+  float: left;
+  width: 100%; }
+
+body, html {
+  height: 100%; }
+
+a, a:hover, a:active, a:focus {
+  outline: 0;
+  text-decoration: none;
+  color: #232323;
+  -webkit-transition-property: color;
+  -moz-transition-property: color;
+  -o-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.1s;
+  -moz-transition-duration: 0.1s;
+  -o-transition-duration: 0.1s;
+  transition-duration: 0.1s;
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear; }
+
+img {
+  max-width: 100%;
+  height: auto; }
 
 .nobr {
   white-space: nowrap !important; }
@@ -115,51 +188,10 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .clearfix {
   display: block; }
 
-body,
-select,
-input,
-textarea {
-  font-family: "Open Sans", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  font-weight: 400;
-  font-size: 12px; }
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 400; }
-
-html {
-  overflow-y: scroll; }
-
-a:hover,
-a:active {
-  outline: none; }
-
-a,
-a:active,
-a:visited {
-  color: #232426;
-  text-decoration: none;
-  -moz-transition: color 0.1s linear 0s;
-  -webkit-transition: color 0.1s linear 0s;
-  -o-transition: color 0.1s linear 0s; }
-
-a:hover {
-  color: #EA4848; }
-
-a:link {
-  -webkit-tap-highlight-color: #FF5E99; }
-
-small {
-  font-size: 85%; }
-
 .page {
   background: white;
   margin: 0 auto;
-  width: 965px; }
+  width: 900px; }
 
 .page-print,
 .page-empty,

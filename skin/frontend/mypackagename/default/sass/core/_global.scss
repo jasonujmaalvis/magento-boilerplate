@@ -1,0 +1,17 @@
+body, html {
+    height: 100%;
+}
+
+a, a:hover, a:active, a:focus {
+    outline: 0;
+    text-decoration: none;
+    color: #232323;
+    @include transition-property(color);
+    @include transition-duration(.1s);
+    @include transition-timing-function(linear);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}

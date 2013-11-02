@@ -4,49 +4,45 @@
         <!-- remove some items set in other .xml files we don't need -->
 		<remove name="right.poll" />
         <remove name="right.permanent.callout" />
-        <remove name="left.permanent.callout" />        
+        <remove name="left.permanent.callout" />
 		<remove name="paypal.partner.right.logo" />
         <remove name="tags_popular" />
         <remove name="product_tag_list" />
 		<remove name="catalog.compare.sidebar" />
-        <remove name="checkout.cart.shipping" />            
+        <remove name="checkout.cart.shipping" />
 		<remove name="left.newsletter" />
 		<remove name="right.reports.product.viewed" />
 		<remove name="left.reports.product.viewed" />
-		<remove name="right.reports.product.compared" />                		
+		<remove name="right.reports.product.compared" />
         <remove name="cart_sidebar" />
 		<remove name="currency" />
-		<remove name="sale.reorder.sidebar" /> 
+		<remove name="sale.reorder.sidebar" />
 		<remove name="wishlist_sidebar" />
-					
-		<reference name="head">            
+
+		<reference name="head">
 			<!-- remove some items set in the page.xml we don't need. if you want to add any back in simply remove them. -->
             <action method="removeItem"><type>skin_css</type><name>css/widgets.css</name></action>
-            <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>              
+            <action method="removeItem"><type>skin_css</type><name>css/print.css</name></action>
 			<action method="removeItem"><type>skin_css</type><name>css/styles-ie.css</name><params/><if>lt IE 8</if></action>
-			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><if>lt IE 7</if></action>       
+			<action method="removeItem"><type>skin_js</type><name>js/ie6.js</name><if>lt IE 7</if></action>
             <action method="removeItem"><type>js</type><name>scriptaculous/builder.js</name></action>
             <action method="removeItem"><type>js</type><name>scriptaculous/dragdrop.js</name></action>
             <action method="removeItem"><type>js</type><name>scriptaculous/slider.js</name></action>
-            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>        
+            <action method="removeItem"><type>js</type><name>varien/menu.js</name></action>
 			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
 
 			<!-- add some items -->
 			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lt IE 9</if></action>
 			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 9</if></action>
-			<action method="addItem"><type>skin_js</type><name>js/selectivizr.min.js</name><params/><if>lt IE 9</if></action>
 	        <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.min.js</name><params/></action>
 		</reference>
-	 
+
 		<reference name="root">
 			<block type="page/html_head" name="site.bottom.css.js" as="site.bottom.css.js" template="page/html/site-bottom-css-js.phtml">
-                <action method="addItem"><type>skin_js</type><name>js/jquery.1.7.2.min.js</name></action> 
-                
-                <!-- include jquery.run.js where you will put your js for the entire store (only use in development) -->
+                <action method="addItem"><type>skin_js</type><name>js/jquery.1.7.2.min.js</name></action>
+
+                <!-- include jquery.run.js where you will put your js for the entire store -->
                 <action method="addItem"><type>skin_js</type><name>js/jquery.run.js</name></action>
-                
-                <!-- minify jquery.run.js and put the code in jquery.run.min.js then comment out the reference above (only use in production) -->
-                <!-- <action method="addItem"><type>skin_js</type><name>js/jquery.run.min.js</name></action> -->
             </block>
 		</reference>
 	</default>
@@ -55,30 +51,30 @@
     <page_home>
         <!-- boilerplate includes an additional home page handler if needed -->
     </page_home>
-	
-    <cms_index_index>                
+
+    <cms_index_index>
         <!-- add specific js files for certain pages if necessary -->
-        <!--        
+        <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.home.js</name></action>
-        </reference>  
-        --> 
+        </reference>
+        -->
     </cms_index_index>
-	
+
     <!-- category (default) -->
 	<catalog_category_default>
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
-        
+
         <!-- add specific js files for certain pages if necessary -->
         <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
         </reference>
         -->
-	</catalog_category_default>	
-	
+	</catalog_category_default>
+
     <!-- category (layered) -->
 	<catalog_category_layered>
         <reference name="root">
@@ -86,10 +82,10 @@
         </reference>
 
         <!-- add specific js files for certain pages if necessary -->
-        <!--        
+        <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
-        </reference>	
+        </reference>
         -->
 	</catalog_category_layered>
 
@@ -100,27 +96,27 @@
         </reference>
 
         <!-- add specific js files for certain pages if necessary -->
-        <!--        
+        <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
-        </reference>  
-        -->    
+        </reference>
+        -->
     </catalogsearch_result_index>
 
-    <!-- catalog search results (advanced) -->    
+    <!-- catalog search results (advanced) -->
     <catalogsearch_advanced_result>
         <reference name="root">
             <action method="setTemplate"><template>page/category.phtml</template></action>
         </reference>
 
         <!-- add specific js files for certain pages if necessary -->
-        <!--        
+        <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.category.js</name></action>
-        </reference>  
+        </reference>
         -->
     </catalogsearch_advanced_result>
-	
+
     <!-- product page -->
 	<catalog_product_view>
         <reference name="root">
@@ -128,13 +124,13 @@
         </reference>
 
         <!-- add specific js files for certain pages if necessary -->
-        <!--        
+        <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.product.js</name></action>
         </reference>
-        -->		
+        -->
 	</catalog_product_view>
-	
+
     <!-- static page -->
 	<page_static>
         <reference name="root">
@@ -142,10 +138,10 @@
         </reference>
 
         <!-- add specific js files for certain pages if necessary -->
-        <!--        
+        <!--
 		<reference name="site.bottom.css.js">
             <action method="addItem"><type>skin_js</type><name>js/jquery.static.js</name></action>
         </reference>
-        -->			
+        -->
 	</page_static>
 </layout>

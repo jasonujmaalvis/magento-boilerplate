@@ -3,45 +3,54 @@
 * Website URL here
 *
 * @author Author name here
-* @package mypackagename_default  
+* @package mypackagename_default
 *
-*/ 
+*/
 
-// Compass add ons   
+// compass helpers
 // --------------------------------------------------
-@import "compass";				// Lets you use compass
-@import "compass/reset";		// Pulls in compass reset
+@import "compass/reset";
+@import "compass/css3";
 
-// Custom imports
+// core setup
 // --------------------------------------------------
-@import "fonts";				// Fonts
-@import "variables";			// Variables
-@import "tools";				// Tools
-@import "base";					// Base
-@import "layout";				// Layout
+@import "core/variables";
+@import "core/mixins";
+@import "core/typography";
 
-@import "navigation";			// Navigation
-@import "header";				// Header
-@import "footer";				// Footer
+// grid
+// --------------------------------------------------
+@import "core/grid";
 
-@import "global";				// Global
-@import "messages";				// Messages
-@import "prices";				// Prices
-@import "tables";				// Tables
-@import "forms";				// Forms
-@import "content";				// Content
-@import "sidebar";				// Sidebar
-@import "blocks";				// Blocks
-@import "toolbar";				// Toolbar
+// global
+// --------------------------------------------------
+@import "core/global";
 
-@import "home";					// Home
-@import "category";				// Category
-@import "product";				// Product
+// custom imports
+// --------------------------------------------------
+@import "tools";
+@import "layout";
 
-@import "cart";					// Cart
-@import "checkout";				// Checkout
-@import "account";				// Account
+@import "navigation";
+@import "header";
+@import "footer";
 
-@import "mediaqueries";			// Media Queries
+@import "global";
+@import "messages";
+@import "prices";
+@import "tables";
+@import "forms";
+@import "content";
+@import "sidebar";
+@import "blocks";
+@import "toolbar";
 
-@import "clears";				// Clears
+@import "home";
+@import "category";
+@import "product";
+
+@import "cart";
+@import "checkout";
+@import "account";
+
+@import "clears";
