@@ -32,14 +32,15 @@
 			<action method="removeItem"><type>js</type><name>lib/ds-sleight.js</name><params/><if>lt IE 7</if></action>
 
 			<!-- add some items -->
-			<action method="addItem"><type>skin_js</type><name>js/html5shiv.js</name><params/><if>lt IE 9</if></action>
-			<action method="addItem"><type>skin_js</type><name>js/respond.min.js</name><params/><if>lt IE 9</if></action>
-	        <action method="addItem"><type>skin_js</type><name>js/modernizr.custom.min.js</name><params/></action>
+            <action method="addItem"><type>skin_js</type><name>js/vendor/min/modernizr.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/vendor/min/html5shiv.min.js</name><params/><if>lt IE 9</if></action>
+            <action method="addItem"><type>skin_js</type><name>js/vendor/min/respond.min.js</name><params/><if>lt IE 9</if></action>
+            <action method="addItem"><type>skin_js</type><name>js/vendor/min/selectivizr.min.js</name><params/><if>lt IE 9</if></action>
 		</reference>
 
 		<reference name="root">
 			<block type="page/html_head" name="site.bottom.css.js" as="site.bottom.css.js" template="page/html/site-bottom-css-js.phtml">
-                <action method="addItem"><type>skin_js</type><name>js/jquery.1.7.2.min.js</name></action>
+                <action method="addItem"><type>skin_js</type><name>js/vendor/min/jquery.1.8.3.min.js</name></action>
 
                 <!-- include jquery.run.js where you will put your js for the entire store -->
                 <action method="addItem"><type>skin_js</type><name>js/jquery.run.js</name></action>
