@@ -4,38 +4,39 @@
  */
 ?>
 <!DOCTYPE html>
-<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie6"> <![endif]-->
-<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie7"> <![endif]-->
-<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie8"> <![endif]-->
-<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js ie9"> <![endif]-->   
-<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" id="top" class="no-js"> <!--<![endif]-->
+<!--[if lt IE 7 ]> <html lang="<?php echo $this->getLang(); ?>" class="no-js ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="<?php echo $this->getLang(); ?>" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="<?php echo $this->getLang(); ?>" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html lang="<?php echo $this->getLang(); ?>" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="<?php echo $this->getLang(); ?>" class="no-js"> <!--<![endif]-->
 <head>
 <?php echo $this->getChildHtml('head'); ?>
 </head>
 <body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
 	<?php echo $this->getChildHtml('after_body_start'); ?>
-	<?php echo $this->getChildHtml('global_notices'); ?>	
+	<?php echo $this->getChildHtml('global_notices'); ?>
 
-	<div class="wrapper">    
-	    <div class="page">
-	        <?php echo $this->getChildHtml('header'); ?>
-	        
-	        <div class="main-container col2-left-layout">
-	            <div class="main">
-	                <?php echo $this->getChildHtml('breadcrumbs'); ?>
-	                <div class="col-main">
-	                    <?php echo $this->getChildHtml('global_messages'); ?>
-	                    <?php echo $this->getChildHtml('content'); ?>
-	                </div><!-- .col-main -->
-	                
-	                <div class="col-left sidebar">
-	                	<?php echo $this->getChildHtml('left'); ?>
-	                </div><!-- .col-left sidebar -->
-	            </div><!-- .main -->
-	        </div><!-- .main-container col2-left-layout -->
+	<div class="wrapper">
+		<div class="page">
+			<?php echo $this->getChildHtml('header'); ?>
+
+			<div class="main-container col2-left-layout">
+				<div class="main">
+					<?php echo $this->getChildHtml('breadcrumbs'); ?>
+
+					<div class="col-main">
+						<?php echo $this->getChildHtml('global_messages'); ?>
+						<?php echo $this->getChildHtml('content'); ?>
+					</div><!-- .col-main -->
+
+					<div class="col-left sidebar">
+						<?php echo $this->getChildHtml('left'); ?>
+					</div><!-- .col-left sidebar -->
+				</div><!-- .main -->
+			</div><!-- .main-container col2-left-layout -->
 
 			<?php echo $this->getChildHtml('footer'); ?>
-	    </div><!-- .page -->
+		</div><!-- .page -->
 	</div><!-- #wrapper -->
 
 	<?php echo $this->getChildHtml('site.bottom.css.js'); ?>
