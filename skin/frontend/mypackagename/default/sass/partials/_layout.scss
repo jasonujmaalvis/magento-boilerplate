@@ -1,0 +1,141 @@
+// Layout
+// --------------------------------------------------
+.page {
+	background:$colorWhite;
+	margin:0 auto;
+	width: 900px;
+}
+
+.page-print,
+.page-empty,
+.page-popup {
+	background:$colorWhite;
+	padding:25px 30px;
+	text-align:$alignLeft;
+}
+
+.main {
+	min-height:400px;
+	text-align:$alignLeft;
+}
+
+
+// Base Columns
+// --------------------------------------------------
+.col-left {
+	float:$alignLeft;
+	width:195px;
+}
+
+.col-main {
+	float:$alignLeft;
+	width:687px;
+}
+
+.col-right {
+	float:$alignRight;
+	width:195px;
+	padding:0 0 1px;
+}
+
+
+// 1 Column Layout
+// --------------------------------------------------
+.col1-layout .col-main {
+	float:none;
+	width:auto;
+}
+
+
+// 2 Columns Layout
+// --------------------------------------------------
+.col2-left-layout .col-main {
+	float:$alignRight;
+}
+
+.col2-right-layout .col-main {
+
+}
+
+
+// 3 Columns Layout
+// --------------------------------------------------
+.col3-layout {
+	.col-main {
+		width:475px;
+		margin-left:15px;
+	}
+
+	.col-wrapper {
+		float:$alignLeft;
+		width:687px;
+
+		.col-main {
+			float:$alignRight;
+		}
+	}
+}
+
+
+// Content Columns
+// --------------------------------------------------
+.col2-set {
+	.col-1 {
+		float:$alignLeft;
+		width:48.5%;
+	}
+
+	.col-2 {
+		float:$alignRight;
+		width:48.5%;
+	}
+
+	.col-narrow {
+		width:32%;
+	}
+
+	.col-wide {
+		width:65%;
+	}
+}
+
+.col3-set {
+	.col-1 {
+		float:$alignLeft;
+		width:32%;
+	}
+
+	.col-2 {
+		float:$alignLeft;
+		width:32%;
+		margin-left:2%;
+	}
+
+	.col-3 {
+		float:$alignRight;
+		width:32%;
+	}
+}
+
+.col4-set {
+	.col-1 {
+		float:$alignLeft;
+		width:23.5%;
+	}
+
+	.col-2 {
+		float:$alignLeft;
+		width:23.5%;
+		margin:0 2%;
+	}
+
+	.col-3 {
+		float:$alignLeft;
+		width:23.5%;
+	}
+
+	.col-4 {
+		float:$alignRight;
+		width:23.5%;
+	}
+}

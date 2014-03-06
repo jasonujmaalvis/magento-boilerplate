@@ -1,0 +1,587 @@
+// Account 
+// --------------------------------------------------
+.my-account .title-buttons .link-rss { 
+	float:none; 
+	margin:0; 
+}
+
+.dashboard {
+	.welcome-msg { 
+		margin:0 8em 1.5em 0;  
+
+		p {
+			margin:0;
+		}
+	}
+
+	.col2-set { 
+		margin:0 0 15px;
+	}
+}
+
+
+// General Box
+// --------------------------------------------------
+.box-account { 
+	background:#fff url(../images/bkg_account_box.gif) 0 0 repeat-x; 
+	border:1px solid #ccc; 
+	border-color:#ccc #999 #999 #ccc; 
+	padding:15px; 
+	margin: 0 0 20px;
+
+	.box-head { 
+		border-bottom:1px solid #d9dde3; 
+		margin:0 0 10px; 
+		text-align:right;
+
+		h2 { 
+			float:left; 
+			margin:0; 
+			font-size:13px; 
+			font-weight:bold; 
+			text-transform:uppercase; 
+			background-position:0 0; 
+			background-repeat:no-repeat; 
+			padding-left:21px;
+		}
+	}
+}	
+
+.dashboard .box {
+	.box-title { 
+		background:url(../images/bkg_divider1.gif) 0 100% repeat-x; 
+		padding:0 0 2px; 
+		margin:0 0 8px; 
+		text-align:right;
+
+		h3,
+		h4 { 
+			float:left; 
+			font-size:13px; 
+			font-weight:bold; 
+			margin:0;
+		}
+	}
+}
+
+
+// Block: Recent Orders
+// --------------------------------------------------
+.dashboard .box-recent .box-head h2 { 
+	background-image:url(../images/i_folder-table.gif);
+}
+
+
+// Block: Account Information
+// --------------------------------------------------
+.dashboard .box-info .box-head h2 { 
+	background-image:url(../images/i_ma-info.gif);
+}
+
+.dashboard .box-info h4 { 
+	font-size:11px; 
+	font-weight:bold; 
+	text-transform:uppercase;
+}
+
+
+// Block: Reviews
+// --------------------------------------------------
+.dashboard .box-reviews {
+	.box-head h2 { 
+		background-image:url(../images/i_ma-reviews.gif);
+	}
+
+	.number { 
+		float:left; 
+		font-size:10px; 
+		font-weight:bold; 
+		line-height:1; 
+		margin:3px -20px 0 0; 
+		padding:2px 3px; 
+		background:#0a263c;
+	}
+
+	.details { 
+		margin-left:20px;
+	}
+
+	li.item { 
+		margin:0 0 7px;
+		
+		&.last { 
+			margin:0;
+		}
+	}
+
+	.ratings { 
+		margin:7px 0 0;
+	}
+}
+
+
+// Block: Tags
+// --------------------------------------------------
+.dashboard .box-tags {
+	.box-head h2 { 
+		background-image:url(../images/i_ma-tags.gif);
+	}
+
+	.number { 
+		float:left; 
+		font-size:10px; 
+		font-weight:bold; 
+		line-height:1;  
+		margin:3px -20px 0 0; 
+		padding:2px 3px; 
+		background:#0a263c;
+	}
+	
+	.details { 
+		margin-left:20px;
+	}
+	
+	li.item { 
+		margin:0 0 7px;
+		
+		&.last { 
+			margin:0;
+		}
+	}
+
+	.tags strong,
+	.tags ul,
+	.tags ul li { 
+		display:inline;
+	}
+}
+
+
+// Address Book
+// --------------------------------------------------
+.addresses-list {
+	h2 { 
+		font-weight:bold; 
+		font-size:13px; 
+		text-transform:uppercase;
+	}
+
+	h3 { 
+		font-weight:bold; 
+		font-size:13px;
+	}
+
+	address { 
+		margin:0 0 3px;
+	}
+	
+	p { 
+		margin:0;
+	}
+
+	a { 
+		font-weight:bold;
+	}
+
+	.separator { 
+		margin:0 3px;
+	}
+
+	li.item { 
+		background:#fff url(../images/bkg_account_box.gif) 0 0 repeat-x; 
+		border:1px solid #ccc; 
+		padding:10px 13px; 
+		margin:0 0 10px;
+	}
+
+	li.empty { 
+		background:none; 
+		border:0; 
+		padding:0;
+
+		p { 
+			font-weight:bold;
+		}
+	}
+
+	.addresses-additional li.item { 
+		background:none; 
+		border:0; 
+		padding:0;
+	}
+}
+
+
+// Order View
+// --------------------------------------------------
+.order-info { 
+	background:#dee5e8; 
+	border:1px solid #d0cbc1; 
+	padding:4px 8px; 
+	margin:0 0 8px;
+
+	dt,
+	dd,
+	ul,
+	li { 
+		display:inline;
+	}
+
+	.current { 
+		font-weight:bold;
+	}
+
+	li { 
+		margin:0 3px;
+	}
+}
+
+.order-date { 
+	margin:10px 0;
+}
+
+.order-info-box { 
+	background:#fff url(../images/bkg_block-title.gif) 0 0 repeat-x; 
+	border:1px solid #d0cbc1; 
+	padding:12px 15px; 
+	margin:0 0 15px;
+
+	h2 { 
+		font-weight:bold; 
+		font-size:13px;
+	}
+
+	.box-payment {
+		p { 
+			margin:0 0 3px;
+		}
+
+		th { 
+			font-weight:bold; 
+			padding-right:7px;
+		}
+	}
+}
+
+.order-items { 
+	width:100%; 
+	overflow-x:auto;
+
+	h2,
+	h3 { 
+		font-weight:bold; 
+		font-size:13px;
+	}
+
+	.product-name { 
+		font-size:1em !important; 
+		font-weight:bold !important;
+	}
+
+	.link-print { 
+		float:right;
+		font-weight:normal;
+	}
+
+	p .link-print { 
+		float:none;
+	}
+}
+
+.order-gift-message { 
+	margin:15px 0;
+}
+
+.gift-message dd { 
+	margin:5px 0 0; 
+	font-size:13px;
+}
+
+.order-about { 
+	margin:15px 0;
+
+	dt { 
+		font-weight:bold;
+	}
+
+	dd { 
+		font-size:13px; 
+		margin:0 0 7px;
+	}
+}
+
+.tracking-table { 
+	margin:0 0 15px;
+
+	th { 
+		font-weight:bold; 
+		white-space:nowrap;
+	}
+
+	th,
+	td { 
+		padding:1px 5px 0 0;
+	}
+}
+
+.tracking-table-popup { 
+	width:100%; 
+
+	th { 
+		font-weight:bold; 
+		white-space:nowrap;
+	}
+
+	th,
+	td { 
+		padding:1px 8px;
+	}
+}
+
+
+// Order Print Pages
+// --------------------------------------------------
+.page-print {
+	.print-head { 
+		margin:0 0 15px;
+
+		.logo { 
+			float:left;
+		}
+
+		address { 
+			float:left; 
+			margin-left:15px;
+		}
+	}
+
+	h1 { 
+		font-size:16px; 
+		font-weight:bold;
+	}
+
+	h2,
+	h3 { 
+		font-size:13px; 
+		font-weight:bold;
+	}
+	
+	h2.h2 { 
+		font-size:16px; 
+		font-weight:bold;
+	}
+	
+	.order-date { 
+		background:url(../images/bkg_divider1.gif) 0 100% repeat-x; 
+		padding:0 0 10px; 
+		margin:0 0 10px;
+	}
+
+	.col2-set { 
+		margin:0 0 10px;
+	}
+}
+
+
+// Price Rewrites
+// --------------------------------------------------
+.page-print {
+	.gift-message-link { 
+		display:none;
+	}
+
+	.price-excl-tax,
+	.price-incl-tax { 
+		display:block; 
+		white-space:nowrap;
+	}
+	
+	.cart-price,
+	.price-excl-tax .label,
+	.price-incl-tax .label,
+	.price-excl-tax .price,
+	.price-incl-tax .price { 
+		display:inline;
+	}
+}
+
+
+// My Wishlist
+// --------------------------------------------------
+.my-wishlist {
+	.data-table td { 
+		padding:10px;
+	}
+
+	.product-image { 
+		display:block; 
+		width:113px; 
+		height:113px; 
+		margin:0 0 5px;
+	}
+
+	textarea { 
+		display:block; 
+		width:97%; 
+		height:109px;
+	}
+
+	.buttons-set { 
+		margin-top:2em;
+
+		button.button { 
+			float:none;
+		}
+
+		.btn-add span,
+		.btn-share span { 
+			border-color:#406a83; 
+			background:#618499;
+		}
+	}
+}
+
+#wishlist-table .add-to-links { 
+	white-space:nowrap;
+}
+
+
+// My Tags
+// --------------------------------------------------
+.my-tag-edit { 
+	float:left; 
+	margin:0 0 10px;
+
+	.btn-remove { 
+		float:right; 
+		margin:5px 0 0 5px;
+	}
+}
+
+#my-tags-table { 
+	clear:both;
+	
+	td { 
+		padding:10px;
+	}
+
+	.add-to-links { 
+		white-space:nowrap;
+	}
+}
+
+
+// My Reviews
+// --------------------------------------------------
+#my-reviews-table td { 
+	padding:10px;
+}
+
+.product-review {
+	.product-img-box { 
+		float:left; width:140px; 
+
+		.product-image { 
+			display:block; 
+			width:125px; 
+			height:125px;
+		}
+
+		.label { 
+			font-size:11px; 
+			margin:0 0 3px;
+		}
+
+		.ratings .rating-box { 
+			float:none; 
+			display:block; 
+			margin:0 0 3px;
+		}
+	}
+	
+	.product-details { 
+		margin-left:150px;
+	}
+
+	.product-name { 
+		font-size:16px; 
+		font-weight:bold; 
+		margin:0 0 10px;
+	}
+	
+	h3 { 
+		font-size:12px; 
+		margin:0 0 3px;
+	}
+
+	.ratings-table { 
+		margin:0 0 10px;
+	}
+	
+	dt { 
+		font-weight:bold;
+	}
+
+	dd { 
+		font-size:13px; 
+		margin:5px 0 0;
+	}
+}
+
+
+// Billing Agreements
+// --------------------------------------------------
+.billing-agreements {
+	.form-list {
+		li select { 
+			float:left;
+		}
+
+		li button.button { 
+			float:left; 
+			margin-left:10px;
+		}
+	}
+
+	.table-caption { 
+		font-weight:bold; 
+		font-size:13px;
+	}
+}
+
+
+// Account login / create pages
+// --------------------------------------------------
+.account-login {
+	.content { 
+		min-height:240px; 
+		padding:14px 21px; 
+		background:#efefef; 
+		border-bottom:0;
+		
+		h2 { 
+			font-weight:bold; 
+			font-size:13px; 
+			margin:0 0 14px; 
+			padding:0 0 5px 23px; 
+			border-bottom:1px solid #ddd; 
+			background-position:0 1px; 
+			background-repeat:no-repeat; 
+			text-transform:uppercase;
+		}
+	}
+	
+	.new-users h2 { 
+		background-image:url(../images/i_page1.gif);
+	}
+
+	.registered-users h2 { 
+		background-image:url(../images/i_page2.gif);
+	}
+
+	.buttons-set { 
+		border-top:0; 
+		margin:0; 
+		padding:8px 13px;
+	}
+}

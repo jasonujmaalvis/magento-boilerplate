@@ -1,0 +1,8 @@
+// PX to EM converter
+// http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
+// --------------------------------------------------
+$base-size: 16px;
+
+@function em($px, $base: $base-size) {
+    @return ($px / $base) * 1em;
+}

@@ -1,0 +1,45 @@
+// Footer
+// --------------------------------------------------
+.footer-container { 
+	background: none repeat scroll 0 0 #F3F3F3; 
+
+	footer { 
+		width:930px; 
+		margin:0 auto;
+
+		a { 
+			text-decoration:none;
+			text-shadow: 1px 1px 1px #FFFFFF;
+
+			&:hover { 
+				text-decoration:underline;
+			}
+		}
+
+		address { 
+			margin:0 0 10px;
+		}
+
+		ul { 
+			display: block;
+			margin-bottom: 8px;
+
+			&.links { 
+				display:block; 
+			}			
+		}
+
+		li { 
+			display:inline; 
+			border-right: 1px solid #adadad; 
+			display: inline; 
+			padding: 0 7px 0 3px; 
+
+			&.last { 
+				background:none !important; 
+				padding-right:0 !important;
+				border-right:0; 
+			}
+		}
+	}
+}

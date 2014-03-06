@@ -1,0 +1,117 @@
+// Header
+// --------------------------------------------------
+.header-container {
+	header { 
+		width:930px; 
+		margin:0 auto; 
+		padding:10px; 
+		text-align:right; 
+		position:relative; 
+		z-index:10;
+		overflow:hidden; 
+
+		.logo { 
+			float:left; 
+			margin:3px 0 10px 12px; 
+			text-decoration:none !important; 
+
+			strong { 
+				position:absolute; 
+				top:-999em; 
+				left:-999em; 
+				width:0; 
+				height:0; 
+				font-size:0; 
+				line-height:0; 
+				text-indent:-999em; 
+				overflow:hidden; 
+			}
+		}
+		
+		h1.logo { 
+			margin:0;
+		}	
+	}
+}
+
+.form-search {
+	label { 
+		float:left; 
+		width:24px; 
+		height:21px; 
+		text-align:left; 
+		text-indent:-999em; 
+		overflow:hidden;
+		display:none; 
+	}
+	
+	input.input-text { 
+		float:left; 
+		width:207px;
+	}
+
+	button.button { 
+		float:left;
+	}
+	
+	button.button span { 
+		border:0; 
+		height:21px; 
+		background:url(../images/btn_search.gif) 0 0 no-repeat; 
+		padding:0 0 0 3px; 
+
+		span { 
+			background-position:100% 0; 
+			padding:0 6px 0 3px;
+		}
+	}
+
+	.search-autocomplete { 
+		z-index:999; 
+		left:40px !important; 
+		top:22px !important; 
+
+		ul { 
+			border:1px solid #5c7989; 
+			background-color:#f9f5f0;
+		}
+		
+		li { 
+			text-align:left; 
+			border-bottom:1px solid #f4eee7; 
+			padding:2px 8px 1px 8px; 
+			cursor:pointer; 
+
+			.amount { 
+				float:right; 
+				font-weight:bold;
+			}
+
+			&.odd { 
+				background-color:#fffefb;
+			}
+			
+			&.selected { 
+				background-color:#f7e8dd;
+			}
+		}
+	}
+
+	.form-language { 
+		clear:both; 
+		padding:5px 0 0; 
+		text-align:right; 
+
+		label { 
+			font-weight:bold; 
+			padding-right:5px; 
+			vertical-align:middle; 
+		}
+
+		select.flags option { 
+			background-position:4px 50%; 
+			background-repeat:no-repeat; 
+			padding-left:25px; 
+		}	
+	}
+}

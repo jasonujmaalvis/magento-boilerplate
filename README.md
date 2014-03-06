@@ -2,13 +2,20 @@
 
 Author: Jason Alvis<br />
 Author Email: hello@jasonalvis.co.uk<br />
-Version: 1.0.4<br />
+Version: 1.0.5<br />
 License: Free General Public License (GPL)<br />
 
 <h2>Brief</h2>
 Starting a Magento project the right way is a must for any developer. This project has many benefits and is the base framework for any new project I start. It adheres to the recommended Magento templating hierarchy and works staight out of the box. Plug, play and enjoy! Oh did I mention it's free to use as well?
 
 <h2>Goods</h2>
+
+<h3>Grunt or Standard</h3>
+This can optionally be used, I would highly recommend you use it, it must be a localhost setup to benefit the advantages. If your new to it please checkout the links below.<br /><br />
+Theres a whole bunch on compilers available, all down to personal preference, they will save you heaps of work, I would recommend Mac users to take a look at Codekit or for Windows users have a look at Prepros.<br /><br />
+Explaining how to set this up is beyond the scope of this readme, please refer to the compilers documentation, each one is different.<br /><br />
+SASS: http://sass-lang.com/<br />
+Compass: http://compass-style.org/
 
 <h3>Custom templates</h3>
 It includes custom templates for the home page, category, product and static pages. The category and product pages are already set in local.xml. You can set the home page and any CMS static pages to their corresponding custom template via the admin panel under CMS > Pages. Select the page in question and in the design tab select the layout from the drop down field.
@@ -46,13 +53,6 @@ Ready to use HTML5 tags, CSS3 selectors and media queries. Modernizr is included
 Html5shiv: http://code.google.com/p/html5shiv/<br />
 Respond: https://github.com/scottjehl/Respond<br />
 Selectivizr: http://selectivizr.com/
-
-<h3>SASS / Compass ready</h3>
-This can optionally be used, I would highly recommend you use it, it must be a localhost setup to benefit the advantages. If your new to it please checkout the links below.<br /><br />
-Theres a whole bunch on compilers available, all down to personal preference, they will save you heaps of work, I would recommend Mac users to take a look at Codekit or for Windows users have a look at Prepros.<br /><br />
-Explaining how to set this up is beyond the scope of this readme, please refer to the compilers documentation, each one is different.<br /><br />
-SASS: http://sass-lang.com/<br />
-Compass: http://compass-style.org/
 
 <h2>Installation</h2>
 Drop in the directories app and skin within your Magento hierarchy e.g:<br /><br />

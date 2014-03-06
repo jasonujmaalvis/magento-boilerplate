@@ -1,0 +1,32 @@
+// Content
+// --------------------------------------------------
+
+
+// Class: std - styles for admin-controlled content 
+// --------------------------------------------------
+.std {
+	.subtitle { 
+		padding:0;
+	}
+	
+	ol.ol { 
+		list-style:decimal outside; 
+		padding-left:1.5em;
+	}
+	
+	ul.disc { 
+		list-style:disc outside; 
+		padding-left:18px; 
+		margin:0 0 10px;
+	}
+	
+	dl {
+		dt { 
+			font-weight:bold;
+		}
+	
+		dd { 
+			margin:0 0 10px;
+		}
+	}
+}
