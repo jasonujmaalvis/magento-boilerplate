@@ -59,16 +59,31 @@ magento > public_html > skin<br /><br />
 You will then need to rename the "mypackagename" to a name of your choice in both the app and skin directories. Then you will need to change the package name in the admin panel to render the new package you have just installed (system > configuration > design > package).
 
 <h2>Using Grunt</h2>
-First off I'm going to assume you have successfully installed Node.js and Grunt, if you haven't you need to do this first, please checkout Grunt website to getting started http://gruntjs.com/getting-started.
+First off I'm going to assume you have successfully installed Node.js and Grunt, if you haven't you need to do this first.
+First install <a href="http://nodejs.org/download/">Node.js</a> then install <a href="http://gruntjs.com/getting-started">Grunt</a>.
 
-Ok so now you have everything needed to use Grunt. First use the shell to cd into the skin theme directory like so
+1. cd into the skin theme directory like so
 
 ```shell
 cd /Applications/MAMP/htdocs/yoursite/skin/frontend/mypackagename/default
 ```
 
-Next you need to install the project dependencies with the following shell command
+2. Install the project dependencies
 
 ```shell
 npm install
 ```
+
+3. Make changes to your files (sass and js) then you'll want to run grunt to initiate the tasks
+
+```shell
+grunt
+```
+
+4. To save you running grunt each time you change something simply run the watch task and it will automatically detect changes on the fly
+
+```shell
+grunt dev
+```
+
+5. Install live reload
