@@ -88,3 +88,5 @@ grunt dev
 ```
 
 5. Take it a step further and install the browser add-on <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" target="_blank">LiveReload</a>. With LiveReload you won’t have to go back to your browser and refresh the page. Page refreshes happen automatically and in the case of CSS, new styles are injected without a page refresh.
+
+6. Enjoy it!
