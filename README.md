@@ -66,3 +66,9 @@ Ok so now you have everything needed to use Grunt. First use the shell to cd int
 ```shell
 cd /Applications/MAMP/htdocs/yoursite/skin/frontend/mypackagename/default
 ```
+
+Next you need to install the project dependencies with the following shell command
+
+```shell
+npm install
+```
