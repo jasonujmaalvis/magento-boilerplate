@@ -13,9 +13,9 @@ Starting a Magento project the right way is a must for any developer. This proje
 <h3>Grunt or Standard</h3>
 There are two themes that come with the boilerplate in the skin directory. The first being default which is targeted to the Grunt setup and the second being default-standard which is targeted to the standard SASS setup. You get to decide which one to go with depending on what your familiar with. Just delete the one you aren't going to use.
 
-Grunt: http://gruntjs.com/<br />
-SASS: http://sass-lang.com/<br />
-Compass: http://compass-style.org/
+<a href="http://gruntjs.com/" target="_blank">Grunt</a><br />
+<a href="http://sass-lang.com/" target="_blank">SASS</a><br />
+<a href="http://compass-style.org/" target="_blank">Compass</a>
 
 <h3>Custom templates</h3>
 It includes custom templates for the home page, category, product and static pages. The category and product pages are already set in local.xml. You can set the home page and any CMS static pages to their corresponding custom template via the admin panel under CMS > Pages. Select the page in question and in the design tab select the layout from the drop down field.
@@ -47,10 +47,11 @@ Within local.xml it has the ability to include a specific JS file for a particul
 </ul>
 
 <h3>HTML5 / CSS3 / Media queries ready</h3>
-Ready to use HTML5 tags, CSS3 selectors and media queries. Modernizr is included by default. If later than IE9 html5shiv.js, respond.min.js and selectivizr.min.js gets included.<br /><br />
-Html5shiv: http://code.google.com/p/html5shiv/<br />
-Respond: https://github.com/scottjehl/Respond<br />
-Selectivizr: http://selectivizr.com/
+Ready to use HTML5 tags, CSS3 selectors and media queries. Modernizr is included by default. If later than IE9 html5shiv.js, respond.min.js and selectivizr.min.js gets included.
+
+<a href="http://code.google.com/p/html5shiv/" target="_blank">Html5shiv</a><br />
+<a href="https://github.com/scottjehl/Respond" target="_blank">Respond</a><br />
+<a href="http://selectivizr.com/" target="_blank">Selectivizr</a>
 
 <h2>Installation</h2>
 Drop in the directories app and skin within your Magento hierarchy e.g:<br /><br />
