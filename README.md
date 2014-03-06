@@ -63,30 +63,28 @@ You will then need to rename the "mypackagename" to a name of your choice in bot
 First off I'm going to assume you have successfully installed Node.js and Grunt, if you haven't you need to do this first.
 First install <a href="http://nodejs.org/download/" target="_blank">Node.js</a> then install <a href="http://gruntjs.com/getting-started" target="_blank">Grunt</a>. Once you've done that proceed below.
 
-1. cd into the skin theme directory like so
+cd into the skin theme directory like so
 
 ```shell
 cd /Applications/MAMP/htdocs/yoursite/skin/frontend/mypackagename/default
 ```
 
-2. Install the project dependencies
+Install the project dependencies
 
 ```shell
 npm install
 ```
 
-3. Make changes to your files (sass and js) then you'll want to run grunt to initiate the tasks
+Make changes to your files (sass and js) then you'll want to run grunt to initiate the tasks
 
 ```shell
 grunt
 ```
 
-4. To save you running grunt each time you change something simply run the watch task and it will automatically detect changes on the fly
+To save you running grunt each time you change something simply run the watch task and it will automatically detect changes on the fly
 
 ```shell
 grunt dev
 ```
 
-5. Take it a step further and install the browser add-on <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" target="_blank">LiveReload</a>. With LiveReload you won’t have to go back to your browser and refresh the page. Page refreshes happen automatically and in the case of CSS, new styles are injected without a page refresh.
-
-6.  Enjoy it!
+Take it a step further and install the browser add-on <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" target="_blank">LiveReload</a>. With LiveReload you won’t have to go back to your browser and refresh the page. Page refreshes happen automatically and in the case of CSS, new styles are injected without a page refresh.
