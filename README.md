@@ -61,7 +61,7 @@ You will then need to rename the "mypackagename" to a name of your choice in bot
 
 <h2>Using Grunt</h2>
 First off I'm going to assume you have successfully installed Node.js and Grunt, if you haven't you need to do this first.
-First install <a href="http://nodejs.org/download/">Node.js</a> then install <a href="http://gruntjs.com/getting-started">Grunt</a>.
+First install <a href="http://nodejs.org/download/" target="_blank">Node.js</a> then install <a href="http://gruntjs.com/getting-started" target="_blank">Grunt</a>. Once you've done that proceed below.
 
 1. cd into the skin theme directory like so
 
@@ -87,4 +87,4 @@ grunt
 grunt dev
 ```
 
-5. Install live reload
+5. Take it a step further and install the browser add-on <a href="http://feedback.livereload.com/knowledgebase/articles/86242-how-do-i-install-and-use-the-browser-extensions-" target="_blank">LiveReload</a>. With LiveReload you won’t have to go back to your browser and refresh the page. Page refreshes happen automatically and in the case of CSS, new styles are injected without a page refresh.
