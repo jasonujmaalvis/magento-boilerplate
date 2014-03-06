@@ -10,7 +10,7 @@ Starting a Magento project the right way is a must for any developer. This proje
 
 <h2>Goods</h2>
 
-<h3>Grunt or Standard</h3>
+<h3>Grunt or Standard - your call</h3>
 This can optionally be used, I would highly recommend you use it, it must be a localhost setup to benefit the advantages. If your new to it please checkout the links below.<br /><br />
 Theres a whole bunch on compilers available, all down to personal preference, they will save you heaps of work, I would recommend Mac users to take a look at Codekit or for Windows users have a look at Prepros.<br /><br />
 Explaining how to set this up is beyond the scope of this readme, please refer to the compilers documentation, each one is different.<br /><br />
