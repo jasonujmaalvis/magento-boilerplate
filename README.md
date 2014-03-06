@@ -10,10 +10,10 @@ Starting a Magento project the right way is a must for any developer. This proje
 
 <h2>Goods</h2>
 
-<h3>Grunt or Standard - your call</h3>
-This can optionally be used, I would highly recommend you use it, it must be a localhost setup to benefit the advantages. If your new to it please checkout the links below.<br /><br />
-Theres a whole bunch on compilers available, all down to personal preference, they will save you heaps of work, I would recommend Mac users to take a look at Codekit or for Windows users have a look at Prepros.<br /><br />
-Explaining how to set this up is beyond the scope of this readme, please refer to the compilers documentation, each one is different.<br /><br />
+<h3>Grunt or Standard</h3>
+There are two themes that come with the boilerplate in the skin directory. The first being default which is targeted to the Grunt setup and the second being default-standard which is targeted to the standard SASS setup. You get to decide which one to go with depending on what your familiar with. Just delete the one you aren't going to use.
+
+Grunt: http://gruntjs.com/<br />
 SASS: http://sass-lang.com/<br />
 Compass: http://compass-style.org/
 
@@ -35,17 +35,15 @@ Magento by default bundles a handful of JS files that are rarely used and only c
 Note: They can be added back in if you need them by simply removing the line of code from local.xml.
 
 <h3>Includes jQuery in no conflict mode</h3>
-jQuery 1.7.2 minified in no conflict mode is included as default, you can change this to include the latest version of jQuery if you wish. It gets included at the very bottom of the dom just like it should be.<br /><br />
+jQuery v1.10.2 minified in no conflict mode is included as default, you can change this to include a more up to date version if you wish. It gets included at the very bottom of the dom just like it should be.<br /><br />
 This improves performance issues particularly on mobile devices as when a browser hits a script tag it actually waits for that entire asset to download before it proceeds, if it's in the head your going to block everything that renders visually on your page from starting.
 
 <h3>Optional custom jQuery files per template</h3>
-The boilerplate comes with jquery.run.min.js which is where you should put all your custom jQuery. Optionally within local.xml it has the ability to include a specific JS file for a particular page, great for specifying jQuery that is only to be rendered on certain pages.
+Within local.xml it has the ability to include a specific JS file for a particular page, great for specifying JavaScript that is only to be rendered on certain pages.
 <ul>
-<li>jquery.run.min.js (included on every page)</li>
 <li>jquery.home.js (optional - included on the home page only)</li>
 <li>jquery.category.js (optional - included on the category page only)</li>
 <li>jquery.product.js (optional - included on the product page only)</li>
-<li>jquery.static.js (optional - included on the static page only)</li>
 </ul>
 
 <h3>HTML5 / CSS3 / Media queries ready</h3>
