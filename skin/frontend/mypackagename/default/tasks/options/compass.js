@@ -3,7 +3,9 @@ module.exports = {
         options: {
             sassDir: 'sass',
             cssDir: 'css',
-            environment: 'production'
+            environment: 'development',
+            outputStyle: 'expanded',
+            noLineComments: false
         }
     }
 }
