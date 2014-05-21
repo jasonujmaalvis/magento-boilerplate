@@ -1,7 +1,7 @@
 module.exports = {
     dist: {
         options: {
-            sassDir: 'sass',
+            sassDir: 'scss',
             cssDir: 'css',
             environment: 'development',
             outputStyle: 'expanded',

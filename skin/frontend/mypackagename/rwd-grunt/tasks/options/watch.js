@@ -10,7 +10,7 @@ module.exports = {
         }
     },
     css: {
-        files: ['sass/**/*.scss'],
+        files: ['scss/**/*.scss'],
         tasks: ['compass'],
         options: {
             spawn: false,
