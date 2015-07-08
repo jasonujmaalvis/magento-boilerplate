@@ -36,5 +36,9 @@ skin/frontend/magentoboilerplate/default/css/*
 npm-debug.log
 node_modules
 
+# Readme / License
+!README.md
+!LICENSE-GPL
+
 # OS generated files
 .DS_Store
