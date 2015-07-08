@@ -75,15 +75,6 @@
     .button {
         bottom: em(20);
         left: em(20);
-        background: none;
-        border: 1px solid $white;
-        padding: em(9, 12) em(30, 12);
-
-        &.active,
-        &:hover {
-            background: $white;
-            color: $color-secondary;
-        }
     }
 
     &:hover {
