@@ -7,19 +7,19 @@ License: Free General Public License (GPL)<br />
 
 <h2>Brief</h2>
 Starting a Magento project the right way is a must for any developer. This project has many benefits and is the base framework for any new project I start. It adheres to the recommended Magento templating hierarchy and has been built from the ground up.<br /><br />
-Note: This boilerplate is *NOT* complete, it is an ongoing project and it will take time to finish. The CSS has been written from scratch and I am slowly styling section by section as I go along, sit tight. If your expecting a fully fledged finished framework this is not for you.
+Note: This boilerplate is **NOT** complete, it is an ongoing project and it will take time to finish. The CSS has been written from scratch and I am slowly styling section by section as I go along, sit tight. If your expecting a fully fledged finished framework this is not for you.
 
 <h2>Goods</h2>
 
 <h3>Sass</h3>
-The CSS has been written completely from scratch and is component based meaning each area is isolated making it highly re-useable. It is based of the <a href="http://html5boilerplate.com/" target="_blank">HTML5 bolerplate</a> and also includes the latest version of <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalise</a>.
+The CSS has been written completely from scratch and is component based meaning each area is isolated making it highly re-useable. It is based of the <a href="http://html5boilerplate.com/" target="_blank">HTML5 bolerplate</a> and also includes the latest version of <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize</a>.
 
 <h3>Removes default xml blocks</h3>
-Magento by default bundles a handful of xml blocks that are rarely used and only causes bloat, so I removed them from within local.xml.<br />
+Magento by default bundles a handful of xml blocks that are rarely used and only causes bloat, so I removed them from within local.xml.<br /><br />
 Note: They can be added back in if you need them by simply removing the line of code from local.xml.
 
 <h3>Removes unnecessary JS files that are rarely used</h3>
-Magento by default bundles a handful of JS files that are rarely used and only causes bloat/performance issues, so I removed them from within local.xml.<br />
+Magento by default bundles a handful of JS files that are rarely used and only causes bloat/performance issues, so I removed them from within local.xml.<br /><br />
 Note: They can be added back in if you need them by simply removing the line of code from local.xml.
 
 <h3>Includes jQuery in no conflict mode</h3>
@@ -31,16 +31,16 @@ Grunt is all setup and ready to go. It comes with the following tasks:
 
 <a href="https://github.com/Ensighten/grunt-spritesmith" target="_blank">Sprite Generation</a><br />
 <a href="https://github.com/sindresorhus/grunt-sass" target="_blank">LibSass</a><br />
-<a href="https://github.com/gruntjs/grunt-contrib-jshint" target="_blank">JSHint</a>
-<a href="https://github.com/gruntjs/grunt-contrib-concat" target="_blank">Concat</a>
-<a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank">Uglify</a>
+<a href="https://github.com/gruntjs/grunt-contrib-jshint" target="_blank">JSHint</a><br />
+<a href="https://github.com/gruntjs/grunt-contrib-concat" target="_blank">Concat</a><br />
+<a href="https://github.com/gruntjs/grunt-contrib-uglify" target="_blank">Uglify</a><br />
 <a href="https://github.com/gruntjs/grunt-contrib-watch" target="_blank">Watch</a>
 
 <h2>Installation</h2>
 Drop in the directories app and skin within your Magento hierarchy e.g:<br /><br />
 magento > public_html > app<br />
 magento > public_html > skin<br /><br />
-You will then need to rename the "mypackagename" to a name of your choice in both the app and skin directories. Then you will need to change the package name in the admin panel to render the new package you have just installed (system > configuration > design > package).
+Then you will need to change the package name in the admin panel to render the new package you have just installed (system > configuration > design > package).
 
 <h2>Using Grunt</h2>
 First off I'm going to assume you have successfully installed Node.js and Grunt, if you haven't you need to do this first.
