@@ -7,7 +7,8 @@ License: Free General Public License (GPL)<br />
 
 <h2>Brief</h2>
 Starting a Magento project the right way is a must for any developer. This project has many benefits and is the base framework for any new project I start. It adheres to the recommended Magento templating hierarchy and has been built from the ground up.<br /><br />
-Note: This boilerplate is **NOT** complete, it is an ongoing project and it will take time to finish. The CSS has been written from scratch and I am slowly styling section by section as I go along, sit tight. If your expecting a fully fledged finished framework this is not for you.
+Note: This boilerplate is **NOT** complete, it is an ongoing project and it will take time to finish. The CSS has been written from scratch and I am slowly styling section by section as I go along, sit tight. If your expecting a fully fledged finished framework this is not for you.<br /><br />
+A demo site will be added in due course.
 
 <h2>Goods</h2>
 
