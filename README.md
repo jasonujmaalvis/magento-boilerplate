@@ -12,7 +12,7 @@ Note: This boilerplate is **NOT** complete, it is an ongoing project and it will
 <h2>Goods</h2>
 
 <h3>Sass</h3>
-The CSS has been written completely from scratch and is component based meaning each area is isolated making it highly re-useable. It is based of the <a href="http://html5boilerplate.com/" target="_blank">HTML5 bolerplate</a> and also includes the latest version of <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize</a>.
+The CSS has been written completely from scratch and is component based meaning each area is isolated making it highly re-useable. It is based of the <a href="http://html5boilerplate.com/" target="_blank">HTML5 boilerplate</a> and also includes the latest version of <a href="https://necolas.github.io/normalize.css/" target="_blank">Normalize</a>.
 
 <h3>Removes default xml blocks</h3>
 Magento by default bundles a handful of xml blocks that are rarely used and only causes bloat, so I removed them from within local.xml.<br /><br />
