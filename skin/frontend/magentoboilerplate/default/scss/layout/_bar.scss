@@ -1,0 +1,133 @@
+// -------------------------------------------------------------- //
+// Site Bar ----------------------------------------------------- //
+// -------------------------------------------------------------- //
+.page-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid darken($concrete, 10%);
+    transition: all 300ms ease-out 0s;
+    background-color: #fff;
+    z-index: 9999;
+    @include rgba-bg(#fff, 0.9);
+    @extend %clearfix;
+
+    .actions {
+        float: right;
+
+        > div {
+            position: relative;
+            overflow: hidden;
+            float: right;
+            line-height: em(70);
+            width: 0;
+            min-width: em(70);
+            border-left: 1px solid darken($concrete, 10%);
+            transition: width 0.2s ease 0s;
+        }
+    }
+
+    label {
+        float: left;
+        margin: 0;
+        text-align: center;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    input {
+        border: 0;
+        font-size: em(14);
+        height: em(70, 14);
+        padding: em(18, 14) em(15, 14) em(18, 14) 0;
+        background: transparent;
+    }
+
+    input,
+    select {
+        vertical-align: top;
+    }
+
+    .field-cont {
+        display: none;
+        padding-left: em(70);
+    }
+
+    .style-select {
+        height: em(70);
+        line-height: em(70);
+        border: 0;
+        background: transparent;
+
+        select {
+            height: em(70, 14);
+            line-height: em(70, 14);
+            padding-left: 0;
+        }
+    }
+
+    .active .field-cont {
+        display: block;
+    }
+}
+
+// -------------------------------------------------------------- //
+// Search Form -------------------------------------------------- //
+// -------------------------------------------------------------- //
+.page-bar .form-search {
+    &.active {
+        width: em(370);
+    }
+
+    label {
+        width: em(70);
+        height: em(70);
+        text-indent: -9999px;
+        @include sprite-2x-image($sprite__icon-search, $sprite-2x__icon-search);
+        @include sprite-position($sprite__icon-search);
+    }
+
+    button {
+        display: none;
+    }
+}
+
+// -------------------------------------------------------------- //
+// Currency Switcher -------------------------------------------- //
+// -------------------------------------------------------------- //
+.page-bar .currency-switcher {
+    &.active {
+        width: em(370);
+    }
+
+    label {
+        width: em(70);
+        height: em(70);
+    }
+
+    .field-cont {
+        padding-right: em(15);
+    }
+}
+
+// -------------------------------------------------------------- //
+// Language Switcher -------------------------------------------- //
+// -------------------------------------------------------------- //
+.page-bar .actions .form-language {
+    min-width: em(100);
+
+    &.active {
+        width: em(370);
+    }
+
+    label {
+        width: em(100);
+        padding: 0 15px;
+    }
+
+    .field-cont {
+        padding-left: em(100);
+        padding-right: em(20);
+    }
+}

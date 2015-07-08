@@ -1,0 +1,64 @@
+// -------------------------------------------------------------- //
+// Global variables --------------------------------------------- //
+// -------------------------------------------------------------- //
+
+// Font stacks
+$font-family-sans-serif:        "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$font-family-serif:             Georgia, Cambria, "Times New Roman", Times, serif !default;
+$font-family-monospace:         Consolas, "Liberation Mono", Courier, monospace !default;
+
+// Font weights
+$font-weight-normal:            normal !default;
+$font-weight-bold:              bold !default;
+
+// Global font styles
+$base-font-size:                100% !default; // typical default browser font-size is 16px
+$base-em:                       16px !default;
+$base-line-height:              1.5 !default; // $base-line-height is 24px while $base-font-size is 16px
+$body-font-color:               #262626 !default;
+$body-font-family:              $font-family-sans-serif !default;
+$body-font-weight:              $font-weight-normal !default;
+$body-font-style:               normal !default;
+
+// Grid
+$max-container-width:           1230px;
+
+// Media Query Ranges
+$small-range:                   (em(479), em(640)) !default;
+$medium-range:                  (em(641), em(1024)) !default;
+$large-range:                   (em(1025), em(1440)) !default;
+$xlarge-range:                  (em(1441), em(1920)) !default;
+$xxlarge-range:                 (em(1921), 99999999em) !default;
+
+// Media Queries
+$screen:                        "only screen" !default;
+
+$landscape:                     "#{$screen} and (orientation: landscape)" !default;
+$portrait:                      "#{$screen} and (orientation: portrait)" !default;
+
+$small-min:                     lower-bound($small-range) !default;
+$small-max:                     upper-bound($small-range) !default;
+
+$medium-min:                    lower-bound($medium-range) !default;
+$medium-max:                    upper-bound($medium-range) !default;
+
+$large-min:                     lower-bound($large-range) !default;
+$large-max:                     upper-bound($large-range) !default;
+
+$xlarge-min:                    lower-bound($xlarge-range) !default;
+$xlarge-max:                    upper-bound($xlarge-range) !default;
+
+$xxlarge-min:                   lower-bound($xxlarge-range) !default;
+$xxlarge-max:                   upper-bound($xxlarge-range) !default;
+
+// Colors
+$white:                         #FFFFFF;
+$concrete:                      #F3F3F3;
+$alto:                          #DDDDDD;
+$mine-shaft:                    #202020;
+$boulder:                       #767676;
+$mountain-meadow:               #1abc9c;
+$black:                         #000000;
+
+$color-primary:                 $mountain-meadow;
+$color-secondary:               $mine-shaft;

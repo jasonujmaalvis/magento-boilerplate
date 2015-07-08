@@ -1,0 +1,7 @@
+// -------------------------------------------------------------- //
+// Application general import file full mq support -------------- //
+// -------------------------------------------------------------- //
+$mq-support: true;
+$mq-fixed-value: false;
+
+@import "all";

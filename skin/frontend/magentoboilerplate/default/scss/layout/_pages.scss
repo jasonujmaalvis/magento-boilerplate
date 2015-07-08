@@ -1,0 +1,33 @@
+// -------------------------------------------------------------- //
+// Pages -------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+// Two columns with left sidebar
+.col2-left-layout {
+    > .row > .column-left {
+        @include bp(min-width, $large-min) {
+            width: 25%;
+        }
+    }
+
+    > .row .column-main {
+        @include bp(min-width, $large-min) {
+            width: 75%;
+        }
+    }
+}
+
+// Two columns with right sidebar
+.col2-right-layout {
+    > .row > .column-right {
+        @include bp(min-width, $large-min) {
+            width: 35%;
+        }
+    }
+
+    > .row .column-main {
+        @include bp(min-width, $large-min) {
+            width: 65%;
+        }
+    }
+}

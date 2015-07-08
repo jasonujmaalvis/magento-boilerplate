@@ -1,17 +1,40 @@
-lib-cov
-*.seed
-*.log
-*.csv
-*.dat
-*.out
-*.pid
-*.gz
+# Ignore everything in the root except the "app, skin" directories.
+/*
+!.gitignore
+!app/
+!skin/
 
-pids
-logs
-results
+# Ignore everything in the "app, skin" directories, except the "magentoboilerplate"
+# directories.
+app/*
+!app/design/
+app/design/adminhtml/
+app/design/frontend/*
+!app/design/frontend/magentoboilerplate/
+app/design/install/
 
+!app/etc/
+app/etc/*
+!app/etc/modules/
+app/etc/modules/*
+!app/etc/modules/Boilerplate_*.xml
+
+!app/code/
+app/code/community/
+app/code/core/
+
+skin/*
+!skin/frontend/
+skin/frontend/*
+!skin/frontend/magentoboilerplate/
+skin/frontend/magentoboilerplate/default/css/*
+
+# Ignore sass cache
+.sass-cache
+
+# Ignore node files
 npm-debug.log
 node_modules
 
-.sass-cache
+# OS generated files
+.DS_Store

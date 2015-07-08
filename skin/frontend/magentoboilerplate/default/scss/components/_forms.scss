@@ -1,0 +1,153 @@
+// -------------------------------------------------------------- //
+// Forms -------------------------------------------------------- //
+// -------------------------------------------------------------- //
+label {
+    display: block;
+    margin-bottom: em(10);
+}
+
+label.required em,
+span.required em {
+    display: none;
+}
+
+input[type=email],
+input[type=search],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text],
+textarea,
+select {
+    background: $white;
+    border: 2px solid $alto;
+    border-radius: 3px;
+    font-size: em(16);
+    padding: em(13, 16) em(15, 16);
+    transition: all 0.1s ease-in-out 0s;
+    color: $color-secondary;
+    width: 100%;
+
+    &:focus {
+        border-color: $color-primary;
+    }
+}
+
+input[type=email],
+input[type=search],
+input[type=number],
+input[type=password],
+input[type=tel],
+input[type=text] {
+    height: em(50, 16);
+}
+
+input[type=search] {
+    @include box-sizing(border-box);
+}
+
+select {
+    font-size: em(14);
+    padding: em(5, 14) em(10, 14);
+}
+
+.input-group {
+    display: table;
+
+    input,
+    textarea,
+    select {
+        display: table-cell;
+    }
+}
+
+.input-group-btn {
+    display: table-cell;
+    vertical-align: middle;
+    width: 1%;
+    padding-left: em(10);
+}
+
+// Instructions
+.form-instructions {
+    margin-bottom: em(30);
+}
+
+// Remember me
+.remember-me-popup {
+    display: none;
+}
+
+// -------------------------------------------------------------- //
+// Styled Select ------------------------------------------------ //
+// -------------------------------------------------------------- //
+.style-select {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border: 2px solid $alto;
+    border-radius: 3px;
+    width: 100%;
+
+    &:after {
+        @include css-triangle(6px, $boulder, top);
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        margin-top: -3px;
+    }
+
+    select {
+        display: block;
+        border: 0;                          // removes border
+        -webkit-appearance: none;           // removes default chrome and safari style
+        -moz-appearance: none;              // removes default firefox style
+        text-indent: 0.01px;                // removes default arrow from firefox
+        text-overflow: "";                  // removes default arrow from firefox
+        background: transparent;
+        cursor: pointer;
+        font-size: 14px;
+        padding-right: em(32, 14);          // larger on the right to take arrow into account
+        width: 100%;
+        vertical-align: top;
+        position: relative;
+        z-index: 1;
+
+        &::-ms-expand {
+            display: none;
+        }
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+// -------------------------------------------------------------- //
+// Small Form --------------------------------------------------- //
+// -------------------------------------------------------------- //
+.container.form-small {
+    max-width: em(600);
+}
+
+// -------------------------------------------------------------- //
+// Form list ---------------------------------------------------- //
+// -------------------------------------------------------------- //
+.form-list {
+    > li,
+    .field {
+        margin-bottom: em(20);
+    }
+
+    li.control {
+        .input-box {
+            display: inline;
+        }
+
+        label {
+            display: inline-block;
+            margin: 0 0 0 em(10);
+            cursor: pointer;
+        }
+    }
+}

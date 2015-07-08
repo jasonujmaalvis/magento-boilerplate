@@ -1,0 +1,46 @@
+<?php
+   $_catModel   = Mage::getModel('catalog/category');
+   $_currentCat = Mage::registry('current_category');
+   $_category   = $_catModel->load($_currentCat->getId());
+   $_children   = $_catModel->getChildrenCategories();
+?>
+
+<?php if(count($_children) > 0): ?>
+    <div class="box-listing">
+        <div class="row">
+            <?php foreach ($_children as $_cat): ?>
+                <?php
+                    $_category          = Mage::getModel("catalog/category")->load($_cat->getId());
+                    $_categoryThumbnail = $_category->getThumbnail();
+                    $_categoryDesc      = $_category->getDescription();
+
+                    if ($_categoryThumbnail != null) {
+                        $_thumb = Mage::getBaseUrl('media') . 'catalog/category/' . $_categoryThumbnail;
+                    } else {
+                        $_thumb = $this->getSkinUrl("images/catalog/product/placeholder/image.jpg");
+                    }
+                ?>
+
+                <div class="column">
+                    <figure>
+                        <div class="image">
+                            <img src="<?php echo $_thumb; ?>" alt="<?php echo $_category->getName() ?>" />
+
+                            <?php if($_categoryDesc): ?>
+                                <p class="description"><?php echo Mage::helper('core/string')->truncate(strip_tags($_categoryDesc), 130); ?></p>
+                            <?php endif; ?>
+                        </div><!-- .image -->
+
+                        <figcaption>
+                            <h2>
+                                <a class="link" href="<?php echo $_category->getUrl(); ?>" title="<?php echo $_category->getName() ?>">
+                                    <?php echo $_category->getName(); ?>
+                                </a>
+                            </h2>
+                        </figcaption>
+                    </figure>
+                </div>
+            <?php endforeach; ?>
+        </div><!-- .row -->
+    </div><!-- .box-listing -->
+<?php endif; ?>

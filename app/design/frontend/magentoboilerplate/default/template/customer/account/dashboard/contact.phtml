@@ -1,0 +1,8 @@
+<div class="account-block account-block-bg account-block-contact">
+    <div><?php echo $this->getLayout()->createBlock('cms/block')->setBlockId('customer_account_contact')->toHtml() ?></div>
+
+    <br />
+    <?php echo $this->__('Phone:'); ?> <?php echo Mage::getStoreConfig('general/store_information/phone'); ?>
+    <br />
+    <?php echo $this->__('Email:'); ?> <a href="mailto:<?php echo Mage::getStoreConfig('trans_email/ident_general/email'); ?>?subject=Website Assistance" title="<?php echo $this->__('Email Us'); ?>"><?php echo Mage::getStoreConfig('trans_email/ident_general/email'); ?></a>
+</div><!-- .account-block -->

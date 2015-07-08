@@ -1,0 +1,11 @@
+// -------------------------------------------------------------- //
+// Image replacement -------------------------------------------- //
+// -------------------------------------------------------------- //
+@mixin image-replacement {
+    text-indent: -9999px;
+}
+
+// Undo the replacement for child elements
+@mixin image-replacement-override {
+    text-indent: 0;
+}

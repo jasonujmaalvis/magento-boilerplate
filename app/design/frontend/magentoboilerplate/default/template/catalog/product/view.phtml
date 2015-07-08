@@ -1,0 +1,188 @@
+<?php
+/**
+ * Product view template
+ *
+ * @see Mage_Catalog_Block_Product_View
+ * @see Mage_Review_Block_Product_View
+ */
+?>
+<?php
+    $_helper = $this->helper('catalog/output');
+    $_product = $this->getProduct();
+?>
+
+<script type="text/javascript">
+    var optionsPrice = new Product.OptionsPrice(<?php echo $this->getJsonConfig() ?>);
+</script>
+
+<div id="messages_product_view">
+    <?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+</div>
+
+<div class="product-view">
+    <div class="container">
+        <form action="<?php echo $this->getSubmitUrl($_product) ?>" method="post" id="product_addtocart_form"<?php if($_product->getOptions()): ?> enctype="multipart/form-data"<?php endif; ?>>
+             <?php echo $this->getBlockHtml('formkey') ?>
+
+            <div class="no-display">
+                <input type="hidden" name="product" value="<?php echo $_product->getId() ?>" />
+                <input type="hidden" name="related_product" id="related-products-field" value="" />
+            </div>
+
+            <div class="row">
+                <div class="column column-left">
+                    <div class="product-name product-name-one">
+                        <h1><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></h1>
+                    </div>
+
+                    <div class="price-info">
+                        <?php echo $this->getPriceHtml($_product); ?>
+                    </div><!-- .price-info -->
+
+                    <?php echo $this->getChildHtml('media') ?>
+                </div><!-- .column -->
+
+                <div class="column column-middle">
+                    <div class="product-shop">
+                        <div class="product-name">
+                            <span class="h1"><?php echo $_helper->productAttribute($_product, $_product->getName(), 'name') ?></span>
+                        </div>
+
+                        <div class="price-info">
+                            <?php echo $this->getPriceHtml($_product); ?>
+                            <?php echo $this->getChildHtml('bundle_prices') ?>
+                            <?php echo $this->getTierPriceHtml() ?>
+                        </div>
+
+                        <div class="extra-info">
+                            <?php echo $this->getReviewsSummaryHtml($_product, 'default', false)?>
+                            <?php echo $this->getChildHtml('product_type_availability'); ?>
+                        </div>
+
+                        <?php echo $this->getChildHtml('alert_urls') ?>
+                        <?php echo $this->getChildHtml('other');?>
+                    </div><!-- .product-shop -->
+
+                    <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                        <?php echo $this->getChildChildHtml('container1', '', true, true) ?>
+                    <?php endif;?>
+
+                    <div class="add-to-cart-wrapper">
+                        <?php echo $this->getChildHtml('product_type_data') ?>
+                        <?php echo $this->getChildHtml('extrahint') ?>
+
+                        <?php if (!$this->hasOptions()):?>
+                            <div class="add-to-box">
+                                <?php if($_product->isSaleable()): ?>
+                                    <?php echo $this->getChildHtml('addtocart') ?>
+                                <?php endif; ?>
+
+                                <?php //echo $this->getChildHtml('addto') ?>
+                            </div>
+                            <?php echo $this->getChildHtml('extra_buttons') ?>
+                        <?php elseif (!$_product->isSaleable()): ?>
+                            <div class="add-to-box">
+                                <?php //echo $this->getChildHtml('addto') ?>
+                            </div>
+                        <?php endif; ?>
+                    </div><!-- .add-to-cart-wrapper -->
+
+                    <?php if ($_product->isSaleable() && $this->hasOptions()):?>
+                        <?php echo $this->getChildChildHtml('container2', '', true, true) ?>
+                    <?php endif; ?>
+
+                    <div class="product-details js-toggle-content">
+                        <?php if ($detailedInfoGroup = $this->getChildGroup('detailed_info', 'getChildHtml')): ?>
+                            <dl>
+                                <?php foreach ($detailedInfoGroup as $alias => $html): ?>
+                                    <dt><span><?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?></span></dt>
+                                    <dd><?php echo $html ?></dd>
+                                <?php endforeach;?>
+                            </dl>
+                        <?php endif; ?>
+                    </div><!-- .product-details -->
+
+                    <?php echo $this->getChildHtml('sharing') ?>
+                </div><!-- .column -->
+
+                <div class="column column-right">
+                    <?php echo $this->getChildHtml('related_products'); ?>
+                </div><!-- .column -->
+            </div><!-- .row -->
+        </form>
+    </div><!-- .container -->
+
+    <div class="product-extra js-tabs">
+        <div class="container">
+            <?php if ($productExtraGroup = $this->getChildGroup('product_extra', 'getChildHtml')): ?>
+                <div class="row tab-nav">
+                    <?php $i = 0; foreach ($productExtraGroup as $alias => $html): ?>
+                        <a href="#"<?php if($i === 0): ?> class="open"<?php endif; ?>>
+                            <?php echo $this->escapeHtml($this->getChildData($alias, 'title')) ?>
+                        </a>
+                    <?php $i++; endforeach; ?>
+                </div><!-- .row -->
+
+                <?php $i = 0; foreach ($productExtraGroup as $alias => $html): ?>
+                    <div class="tab-pane<?php if($i === 0): ?> open<?php endif; ?>">
+                        <?php echo $html ?>
+                    </div><!-- .product-extra-contents -->
+                <?php $i++; endforeach; ?>
+            <?php endif; ?>
+        </div><!-- .container -->
+    </div><!-- .product-extra -->
+
+    <?php echo $this->getChildHtml('product_additional_data') ?>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        var productAddToCartForm = new VarienForm('product_addtocart_form');
+        productAddToCartForm.submit = function(button, url) {
+            if (this.validator.validate()) {
+                var form = this.form;
+                var oldUrl = form.action;
+
+                if (url) {
+                   form.action = url;
+                }
+                var e = null;
+                try {
+                    this.form.submit();
+                } catch (e) {
+                }
+                this.form.action = oldUrl;
+                if (e) {
+                    throw e;
+                }
+
+                if (button && button != 'undefined') {
+                    button.disabled = true;
+                }
+            }
+        }.bind(productAddToCartForm);
+
+        productAddToCartForm.submitLight = function(button, url){
+            if(this.validator) {
+                var nv = Validation.methods;
+                delete Validation.methods['required-entry'];
+                delete Validation.methods['validate-one-required'];
+                delete Validation.methods['validate-one-required-by-name'];
+                // Remove custom datetime validators
+                for (var methodName in Validation.methods) {
+                    if (methodName.match(/^validate-datetime-.*/i)) {
+                        delete Validation.methods[methodName];
+                    }
+                }
+
+                if (this.validator.validate()) {
+                    if (url) {
+                        this.form.action = url;
+                    }
+                    this.form.submit();
+                }
+                Object.extend(Validation.methods, nv);
+            }
+        }.bind(productAddToCartForm);
+    //]]>
+    </script>
+</div><!-- .product-view -->

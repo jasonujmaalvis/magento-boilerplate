@@ -1,0 +1,44 @@
+<?php
+    $_product         = $this->getProduct();
+
+    $_twitter         = Mage::getStoreConfig('boilerplate_all/social_media/twitter_username');
+    $_facebook        = Mage::getStoreConfig('boilerplate_all/social_media/facebook_url');
+    $_google          = Mage::getStoreConfig('boilerplate_all/social_media/google_url');
+    $_pinterest       = Mage::getStoreConfig('boilerplate_all/social_media/pinterest_url');
+
+    $_helper          = $this->helper('catalog/output');
+    $_productName     = urlencode(trim($_helper->productAttribute($_product, $_product->getName(), 'name')));
+    $_productImageUrl = urlencode(trim($this->helper('catalog/image')->init($_product, 'image')));
+    $_productUrl      = urlencode(trim($_product->getProductUrl()));
+    $_productDesc     = urlencode(trim($_helper->productAttribute($_product, nl2br($_product->getShortDescription()), 'short_description')));
+?>
+
+<div class="product-social">
+    <?php if($_twitter): ?>
+        <a class="social-twitter" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=550,height=300');return false;"
+        href="<?php echo 'https://twitter.com/intent/tweet?text=' . $_productName . '&url=' . $_productUrl . '&via=' . $_twitter; ?>"
+        target="_blank"
+        title="<?php echo $this->__('Share on Twitter') ?>"><span><?php echo $this->__('Share on Twitter') ?></span></a>
+    <?php endif; ?>
+
+    <?php
+        $_urlFacebook = 'p[url]=' . $_productUrl . '&p[images][0]=' . $_productImageUrl . '&p[title]=' . $_productName . '&p[summary]=' . $_productDesc;
+    ?>
+
+    <a class="social-facebook" onclick="window.open(this.href,'targetWindow','toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=yes,width=550,height=300');return false;"
+    href="<?php echo 'http://www.facebook.com/sharer.php?s=100&' . $_urlFacebook; ?>"
+    target="_blank"
+    title="<?php echo $this->__('Share on Facebook') ?>"><span><?php echo $this->__('Share on Facebook') ?></span></a>
+
+    <a class="social-google" href="<?php echo 'http://plus.google.com/share?url=' . $_productUrl; ?>"
+    target="_blank"
+    title="<?php echo $this->__('Share on Google+') ?>"><span><?php echo $this->__('Share on Google+') ?></span></a>
+
+    <?php
+        $_urlPinterest = $_productImageUrl . '&description=' . $_productDesc . '&url=' . $_productUrl;
+    ?>
+
+    <a class="social-pinterest" href="<?php echo 'http://pinterest.com/pin/create/button/?media=' . $_urlPinterest; ?>"
+    target="_blank"
+    title="<?php echo $this->__('Share on Pinterest') ?>" count-layout="none"><span><?php echo $this->__('Share on Pinterest') ?></span></a>
+</div><!-- .product-social -->

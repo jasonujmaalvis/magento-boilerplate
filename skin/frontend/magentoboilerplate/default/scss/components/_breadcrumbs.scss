@@ -1,0 +1,32 @@
+// -------------------------------------------------------------- //
+// Breadcrumbs -------------------------------------------------- //
+// -------------------------------------------------------------- //
+.breadcrumbs {
+    background-color: $concrete;
+    padding: em(10);
+    text-transform: uppercase;
+    @extend %clearfix;
+
+    @include bp(max-width, $medium-max) {
+        display: none;
+    }
+
+    ul > li {
+        float: left;
+        font-size: em(10);
+        color: $boulder;
+    }
+
+    a {
+        float: left;
+    }
+
+    span {
+        float: left;
+        padding: 0 em(10);
+    }
+
+    strong {
+        font-weight: normal;
+    }
+}

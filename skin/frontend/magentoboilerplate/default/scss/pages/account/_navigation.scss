@@ -1,0 +1,70 @@
+// -------------------------------------------------------------- //
+// Navigation --------------------------------------------------- //
+// -------------------------------------------------------------- //
+.block-account-nav {
+    margin-bottom: em(30);
+
+    .block-subtitle--nav {
+        position: relative;
+        cursor: pointer;
+        background-color: $color-secondary;
+        color: $white;
+        font-weight: bold;
+        font-size: em(14);
+        padding: em(10, 14) em(15, 14);
+        margin-bottom: 1px;
+
+        span:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            margin-top: -5px;
+            @include sprite-2x($sprite__icon-plus-white, $sprite-2x__icon-plus-white);
+        }
+
+        &.active span:after {
+            @include sprite-2x($sprite__icon-minus-white, $sprite-2x__icon-minus-white);
+        }
+
+        @include bp(min-width, $large-min) {
+            display: none;
+        }
+    }
+
+    ul {
+        border-bottom: 1px solid $concrete;
+        @extend %clearfix;
+    }
+
+    ul > li {
+        font-size: em(14);
+        border-bottom: 1px solid $concrete;
+
+        @include bp(min-width, $large-min) {
+            float: left;
+            border-bottom: 0;
+            padding-right: em(30);
+        }
+
+        a {
+            display: block;
+            position: relative;
+            padding: em(15, 14) 0;
+            color: $mine-shaft;
+        }
+
+        @include bp(max-width, $large-max) {
+            span:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                margin-top: -5px;
+                @include sprite-2x($sprite__icon-right, $sprite-2x__icon-right);
+            }
+        }
+    }
+}

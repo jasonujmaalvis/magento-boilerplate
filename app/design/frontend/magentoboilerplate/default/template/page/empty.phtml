@@ -1,0 +1,25 @@
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+<head>
+    <?php echo $this->getChildHtml('head') ?>
+</head>
+
+<body class="page-empty <?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
+    <div>
+        <?php echo $this->getChildHtml('after_body_start') ?>
+        <?php echo $this->getChildHtml('global_messages') ?>
+        <?php echo $this->getChildHtml('content') ?>
+        <?php echo $this->getChildHtml('before_body_end_js'); ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+        <?php echo $this->getAbsoluteFooter() ?>
+    </div>
+</body>
+</html>

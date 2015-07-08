@@ -1,0 +1,52 @@
+// -------------------------------------------------------------- //
+// Toolbar ------------------------------------------------------ //
+// -------------------------------------------------------------- //
+.toolbar {
+    padding: em(20) 0 em(10);
+    border-top: 1px solid $concrete;
+    @extend %clearfix;
+
+    &.toolbar-bottom {
+        border-bottom: 1px solid $concrete;
+    }
+
+    p,
+    label,
+    select {
+        font-size: em(14);
+        color: $boulder;
+    }
+
+    label {
+        padding-right: em(5, 14);
+    }
+
+    // select {
+    //     width: em(100, 14);
+    // }
+
+    // label,
+    // select,
+    // .style-select {
+    //     display: inline-block;
+    // }
+
+    .amount {
+        float: left;
+    }
+
+    .limiter,
+    .pages,
+    .sort-by {
+        float: right;
+    }
+
+    .sort-by,
+    .pages {
+        margin-left: em(20);
+    }
+
+    .pages {
+        margin-top: em(2);
+    }
+}

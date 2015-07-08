@@ -1,0 +1,37 @@
+// -------------------------------------------------------------- //
+// Buttons ------------------------------------------------------ //
+// -------------------------------------------------------------- //
+.button {
+    display: inline-block;
+    background: $color-primary;
+    border: 0;
+    border-radius: 3px;
+    font-size: em(16);
+    padding: em(8, 16) em(15, 16);
+    transition: all 0.1s ease-in-out 0s;
+    color: $white;
+    font-weight: bold;
+    height: em(50, 16);
+    line-height: 2.1;
+    cursor: pointer;
+
+    &:hover {
+        background: darken($color-primary, 5%);
+        color: $white;
+    }
+}
+
+.buttons-set {
+    margin-top: em(20);
+    @extend %clearfix;
+
+    a:not(.button) {
+        float: left;
+        font-size: em(14);
+        margin-top: em(14, 14);
+    }
+
+    .button {
+        float: right;
+    }
+}

@@ -1,0 +1,81 @@
+<?php
+/**
+ * Temlate for Mage_Customer_Block_Address_Book block
+ * @var $test Mage_Customer_Block_Address_Book
+ */
+?>
+
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<div class="account-block account-block-book">
+    <div class="account-block-heading">
+        <h1><?php echo $this->__('Address Book') ?></h1>
+
+        <a class="link" href="<?php echo $this->getAddAddressUrl() ?>" title="<?php echo $this->__('Add New Address') ?>">
+            <?php echo $this->__('Add New Address') ?>
+        </a>
+    </div><!-- .account-block-heading -->
+
+    <div class="row">
+        <div class="column">
+            <div class="account-block-bg">
+                <h3><?php echo $this->__('Delivery Address') ?></h3>
+
+                <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping()): ?>
+                    <address><?php echo $this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?></address>
+                    <a class="link" href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>">
+                        <?php echo $this->__('Change Shipping Address') ?>
+                    </a>
+                <?php else: ?>
+                    <p><?php echo $this->__('You have no default shipping address in your address book.') ?></p>
+                <?php endif ?>
+            </div>
+        </div><!-- .column -->
+
+        <div class="column">
+            <div class="account-block-bg">
+                <h3><?php echo $this->__('Billing Address') ?></h3>
+
+                <?php if($_pAddsses = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling()): ?>
+                    <address><?php echo $this->getAddressHtml(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?></address>
+                    <a class="link" href="<?php echo $this->getAddressEditUrl(Mage::getSingleton('customer/session')->getCustomer()->getAddressById($_pAddsses)) ?>">
+                        <?php echo $this->__('Change Billing Address') ?>
+                    </a>
+                <?php else: ?>
+                    <?php echo $this->__('You have no default billing address in your address book.') ?>
+                <?php endif ?>
+            </div>
+        </div><!-- .column -->
+    </div><!-- .row -->
+</div><!-- .account-block -->
+
+<div class="account-block account-block-book">
+    <h2><?php echo $this->__('Additional Entries') ?></h2>
+
+    <?php if($_pAddsses = $this->getAdditionalAddresses()): ?>
+        <div class="row">
+            <?php foreach($_pAddsses as $_address): ?>
+                <div class="column">
+                    <div class="account-block-bg">
+                        <address><?php echo $this->getAddressHtml($_address) ?></address>
+                        <a class="link" href="<?php echo $this->getUrl('customer/address/edit', array('id'=>$_address->getId())) ?>"><?php echo $this->__('Edit Address') ?></a>
+                        <br /><a class="link" href="#" onclick="return deleteAddress('<?php echo $_address->getId() ?>');"><?php echo $this->__('Delete Address') ?></a>
+                    </div>
+                </div><!-- .column -->
+            <?php endforeach; ?>
+        </div><!-- .row -->
+    <?php else: ?>
+        <p><?php echo $this->__('You have no additional address entries in your address book.') ?></p>
+    <?php endif ?>
+</div><!-- .account-block -->
+
+<script type="text/javascript">
+//<![CDATA[
+    function deleteAddress(addressId) {
+        if(confirm('<?php echo $this->__('Are you sure you want to delete this address?') ?>')) {
+            window.location='<?php echo $this->getDeleteUrl() ?>id/'+addressId;
+        }
+        return false;
+    }
+//]]>
+</script>

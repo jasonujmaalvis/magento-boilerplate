@@ -1,0 +1,26 @@
+{
+    "name": "MagentoBoilerplate",
+    "version": "0.0.1",
+    "author": "Jason Alvis",
+    "description": "Magento Boilerplate",
+    "keywords": [
+        "magento",
+        "sass",
+        "css"
+    ],
+    "contributors": [
+        "Jason Alvis"
+    ],
+    "license": "MIT",
+    "devDependencies": {
+        "node-sass": "~1.2.3",
+        "grunt": "~0.4.1",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-concat": "*",
+        "grunt-contrib-jshint": "*",
+        "grunt-contrib-watch": "~0.5.3",
+        "grunt-sass": "~0.16.1",
+        "grunt-spritesmith": "~2.20.0",
+        "load-grunt-config": "*"
+    }
+}

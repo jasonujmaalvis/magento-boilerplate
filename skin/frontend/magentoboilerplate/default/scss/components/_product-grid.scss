@@ -1,0 +1,42 @@
+// -------------------------------------------------------------- //
+// Product Grid ------------------------------------------------- //
+// -------------------------------------------------------------- //
+.products-grid {
+    &.row {
+        margin-left: em(-10);
+        margin-right: em(-10);
+    }
+
+    .column {
+        padding: em(10);
+        width: (100% / 2);
+
+        &:nth-child(2n+1) {
+            clear: left;
+        }
+
+        @include bp(min-width, $medium-min) {
+            width: (100% / 3);
+
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+
+            &:nth-child(3n+1) {
+                clear: left;
+            }
+        }
+
+        @include bp(min-width, $large-min) {
+            width: (100% / 4);
+
+            &:nth-child(3n+1) {
+                clear: none;
+            }
+
+            &:nth-child(4n+1) {
+                clear: left;
+            }
+        }
+    }
+}

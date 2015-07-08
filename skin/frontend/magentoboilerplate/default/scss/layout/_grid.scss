@@ -1,0 +1,28 @@
+// -------------------------------------------------------------- //
+// Grid --------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+// Fluid container
+.container {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: em(15);
+    padding-right: em(15);
+    max-width: $max-container-width;
+    @extend %clearfix;
+}
+
+// Rows container and clears the floats of your columns
+.row {
+    margin-left: em(-15);
+    margin-right: em(-15);
+    @extend %clearfix;
+}
+
+// Columns
+.column {
+    float: left;
+    width: 100%;
+    padding-left: em(15);
+    padding-right: em(15);
+}

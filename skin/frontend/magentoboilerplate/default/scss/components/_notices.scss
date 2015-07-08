@@ -1,0 +1,18 @@
+// -------------------------------------------------------------- //
+// GLobal site notices ------------------------------------------ //
+// -------------------------------------------------------------- //
+.global-site-notice {
+    background-color: $color-secondary;
+    color: $boulder;
+    @extend %clearfix;
+
+    p {
+        float: left;
+        font-size: em(14);
+        padding: em(15) em(20);
+    }
+
+    .first {
+        border-right: 1px solid $boulder;
+    }
+}

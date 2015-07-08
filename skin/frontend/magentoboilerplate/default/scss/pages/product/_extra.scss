@@ -1,0 +1,41 @@
+// -------------------------------------------------------------- //
+// Product extra ------------------------------------------------ //
+// -------------------------------------------------------------- //
+.product-extra {
+    background-color: $concrete;
+    padding: em(80) 0;
+
+    .tab-nav {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        font-size: 0;
+
+        a {
+            display: inline-block;
+            font-size: 12px;
+            padding-bottom: em(13, 12);
+            border-bottom: 1px solid $boulder;
+            width: 50%;
+            color: $color-secondary;
+
+            @include bp(min-width, $medium-min) {
+                width: 290px;
+            }
+        }
+
+        a.open {
+            border-bottom: 2px solid $color-secondary;
+            padding-bottom: em(12, 12);
+        }
+    }
+
+    .tab-pane {
+        display: none;
+        margin-top: em(20);
+
+        &.open {
+            display: block;
+        }
+    }
+}

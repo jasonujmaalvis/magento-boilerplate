@@ -1,0 +1,8 @@
+// -------------------------------------------------------------- //
+// px to em conversion ------------------------------------------ //
+// -------------------------------------------------------------- //
+@function em($target, $context: $base-em) {
+    $target: strip-unit($target) / strip-unit($context) * 1em;
+    @if ($target == 0em) { $target: 0; } // Turn 0em into 0
+    @return $target;
+}

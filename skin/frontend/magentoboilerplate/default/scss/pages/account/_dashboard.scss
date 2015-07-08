@@ -1,0 +1,62 @@
+// -------------------------------------------------------------- //
+// Dashboard ---------------------------------------------------- //
+// -------------------------------------------------------------- //
+.account-block {
+    margin-bottom: em(30);
+
+    .account-block-heading {
+        margin-bottom: em(20);
+        @extend %clearfix;
+
+        h1,
+        h2 {
+            float: left;
+            margin: 0;
+        }
+
+        a {
+            float: right;
+        }
+    }
+
+    .column {
+        margin-bottom: em(30);
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.account-block-bg {
+    background-color: $concrete;
+    padding: em(30);
+}
+
+.account-block-border {
+    border: 1px solid $concrete;
+    padding: em(30);
+}
+
+// Wishlist
+.account-block-wishlist {
+    .product-item {
+        margin-bottom: 0;
+    }
+}
+
+// Subscribe
+.account-block-subscribe {
+    li {
+        margin: 0;
+    }
+}
+
+// Address Book
+.account-block-book {
+    .column {
+        @include bp(min-width, $medium-min) {
+            width: 50%;
+        }
+    }
+}

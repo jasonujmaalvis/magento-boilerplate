@@ -1,0 +1,19 @@
+<?php
+/**
+ * @var $this Mage_Page_Block_Html_Notices
+ */
+?>
+<?php if ($this->displayNoscriptNotice()): ?>
+    <noscript>
+        <div class="global-site-notice noscript">
+            <p class="first"><?php echo $this->__('JavaScript Disabled'); ?></p>
+            <p><?php echo $this->__('JavaScript seems to be disabled in your browser. You must have JavaScript enabled in your browser to utilize the functionality of this website.'); ?></p>
+        </div>
+    </noscript>
+<?php endif; ?>
+<?php if ($this->displayDemoNotice()): ?>
+    <div class="global-site-notice demo-notice">
+        <p class="first"><?php echo Mage::getStoreConfig('general/store_information/name'); ?></p>
+        <p><?php echo $this->__('This is a demo store. Any orders placed through this store will not be honored or fulfilled.') ?></p>
+    </div>
+<?php endif; ?>

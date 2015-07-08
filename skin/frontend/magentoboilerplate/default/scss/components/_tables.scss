@@ -1,0 +1,26 @@
+// -------------------------------------------------------------- //
+// Tables ------------------------------------------------------- //
+// -------------------------------------------------------------- //
+.data-table {
+    width: 100%;
+
+    th,
+    td {
+        font-size: em(14);
+    }
+
+    thead {
+        th {
+            background-color: $concrete;
+            text-align: left;
+            padding: em(15, 14) em(20, 14);
+        }
+    }
+
+    tbody {
+        td {
+            padding: em(10, 14) em(20, 14);
+            border-bottom: 1px solid $concrete;
+        }
+    }
+}

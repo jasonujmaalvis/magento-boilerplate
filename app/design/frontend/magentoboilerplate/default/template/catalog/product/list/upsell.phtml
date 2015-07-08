@@ -1,0 +1,51 @@
+<?php if(count($this->getItemCollection()->getItems())): ?>
+<div class="product-upsell">
+    <div class="row products-grid">
+        <?php $this->resetItemsIterator() ?>
+
+        <?php foreach ($this->getItemCollection()->getItems() as $_link): ?>
+            <div class="column product-item">
+                <div class="product-item-image">
+                    <a href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_link->getName()) ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_link, 'small_image')->resize(388, 480) ?>" alt="<?php echo $this->escapeHtml($_link->getName()) ?>" />
+                    </a>
+
+                    <div class="product-item-overlay">
+                        <a class="link" href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_link->getName()) ?>"></a>
+
+                        <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                            <a href="<?php echo $this->helper('wishlist')->getAddUrl($_link) ?>" title="<?php echo $this->__('Add to Wishlist') ?>">
+                                <?php echo $this->__('Add to Wishlist') ?>
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if($_compareUrl = $this->getAddToCompareUrl($_link)): ?>
+                            <a href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare') ?>">
+                                <?php echo $this->__('Add to Compare') ?>
+                            </a>
+                        <?php endif; ?>
+
+                        <?php if($_link->isSaleable() && !$_link->canConfigure()): ?>
+                            <a class="button" href="<?php echo $this->getAddToCartUrl($_link) ?>" title="<?php echo $this->__('Add to Cart') ?>">
+                                <?php echo $this->__('Add to Cart') ?>
+                            </a>
+                        <?php elseif(!$_link->isSaleable()): ?>
+                            <span class="button"><?php echo $this->__('Out of stock') ?></span>
+                        <?php endif; ?>
+                    </div><!-- .product-item-overlay -->
+                </div><!-- .product-image -->
+
+                <div class="product-item-info">
+                    <h2 class="product-item-name">
+                        <a href="<?php echo $_link->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_link->getName()) ?>">
+                            <?php echo $this->escapeHtml($_link->getName()) ?>
+                        </a>
+                    </h2><!-- .product-item-name -->
+
+                    <?php echo $this->getPriceHtml($_link, true, '-upsell') ?>
+                </div><!-- .product-item-info -->
+            </div><!-- .column -->
+        <?php endforeach; ?>
+    </div><!-- row -->
+</div><!-- .product-upsell -->
+<?php endif ?>

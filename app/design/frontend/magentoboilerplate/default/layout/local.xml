@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!--
+/*
+ * @description  Layout modifications
+ * @author       Jason Alvis
+ * @package      magentoboilerplate_default
+ *
+ */
+-->
+<layout version="0.1.0">
+    <default>
+        <!-- remove some items that we don't need -->
+        <remove name="right.poll"/>
+        <remove name="right.permanent.callout"/>
+        <remove name="left.permanent.callout"/>
+        <remove name="paypal.partner.right.logo"/>
+        <remove name="tags_popular"/>
+        <remove name="product_tag_list"/>
+        <remove name="catalog.compare.sidebar"/>
+        <remove name="checkout.cart.shipping"/>
+        <remove name="left.newsletter"/>
+        <remove name="right.reports.product.viewed"/>
+        <remove name="left.reports.product.viewed"/>
+        <remove name="right.reports.product.compared"/>
+        <remove name="sale.reorder.sidebar"/>
+        <remove name="wishlist_sidebar"/>
+
+        <reference name="head">
+            <action method="addItem"><type>skin_js</type><name>js/lib/jquery.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/modernizr.custom.min.js</name></action>
+        </reference>
+
+        <reference name="root">
+            <!-- Enables us to load in JS at the end of the page -->
+            <block type="page/html_head" name="before_body_end_js" as="before_body_end_js" template="page/html/before_body_end_js.phtml" />
+
+            <!-- Enabled us to load in blocks above the content / left / right columns -->
+            <block type="page/html_wrapper" name="content_before" as="content_before" translate="label">
+                <label>Page Content Before</label>
+                <action method="setElementClass"><value>content-before-container</value></action>
+            </block>
+        </reference>
+
+        <!-- Load in js at the end of the page -->
+        <reference name="before_body_end_js">
+            <action method="addItem"><type>skin_js</type><name>js/lib/enquire.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/toggle.single.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/core.js</name></action>
+        </reference>
+
+        <!-- Footer -->
+        <reference name="footer">
+            <block type="cms/block" name="footer_links">
+                <action method="setBlockId"><block_id>footer_links</block_id></action>
+            </block>
+        </reference>
+    </default>
+
+    <catalog_product_view>
+        <reference name="before_body_end_js">
+            <action method="addItem"><type>skin_js</type><name>js/product.gallery.js</name></action>
+        </reference>
+    </catalog_product_view>
+
+    <catalog_category_default>
+        <reference name="before_body_end_js">
+            <action method="addItem"><type>skin_js</type><name>js/category.js</name></action>
+        </reference>
+    </catalog_category_default>
+
+    <catalog_category_layered>
+        <reference name="before_body_end_js">
+            <action method="addItem"><type>skin_js</type><name>js/category.js</name></action>
+        </reference>
+    </catalog_category_layered>
+
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <action method="removeLinkByName"><name>billing_agreements</name></action>
+            <action method="removeLinkByName"><name>recurring_profiles</name></action>
+            <action method="removeLinkByName"><name>OAuth Customer Tokens</name></action>
+            <action method="removeLinkByName"><name>downloadable_products</name></action>
+        </reference>
+
+        <reference name="before_body_end_js">
+            <action method="addItem"><type>skin_js</type><name>js/account.js</name></action>
+        </reference>
+    </customer_account>
+</layout>

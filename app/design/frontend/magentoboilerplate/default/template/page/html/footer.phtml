@@ -1,0 +1,14 @@
+<div class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="column column-left">
+                <?php echo $this->getChildHtml('newsletter'); ?>
+            </div><!-- .column -->
+
+            <div class="column column-right">
+                <?php echo $this->getChildHtml('footer_links'); ?>
+                <p class="copyright">&copy; <?php echo date("Y") . ' ' . $this->getCopyright() ?></p>
+            </div><!-- .column -->
+        </div><!-- .row -->
+    </div><!-- .container -->
+</div><!-- .page-footer -->

@@ -1,0 +1,7 @@
+// -------------------------------------------------------------- //
+// Application general import file no mq for lte-IE8 use -------- //
+// -------------------------------------------------------------- //
+$mq-support: false;
+$mq-fixed-value: 64.000em; // 1024px / 16px
+
+@import "all";

@@ -1,0 +1,96 @@
+// -------------------------------------------------------------- //
+// Footer ------------------------------------------------------- //
+// -------------------------------------------------------------- //
+.page-footer {
+    background-color: $color-secondary;
+    color: $boulder;
+    margin-top: em(50);
+    padding: em(40) 0;
+
+    @include bp(min-width, $large-min) {
+        margin-top: em(100);
+        padding: em(75) 0;
+    }
+
+    .column-left {
+        @include bp(min-width, $large-min) {
+            float: right;
+            width: 35%;
+        }
+    }
+
+    .column-right {
+        @include bp(min-width, $large-min) {
+            width: 60%;
+        }
+    }
+
+    ul {
+        margin-bottom: em(20);
+
+        @include bp(min-width, $medium-min) {
+            float: left;
+            margin-right: em(60);
+            margin-bottom: 0;
+        }
+    }
+
+    p,
+    a,
+    input,
+    .button {
+        font-size: em(14);
+        line-height: 1.8;
+    }
+
+    a {
+        &:hover {
+            color: $white;
+        }
+    }
+}
+
+// Copyright
+.page-footer .copyright {
+    float: left;
+    width: 100%;
+    margin: em(20) 0 0;
+
+    @include bp(min-width, $medium-min) {
+        margin-top: em(40);
+    }
+}
+
+// Newsletter subscribe
+.page-footer .block-subscribe {
+    margin-bottom: em(40);
+
+    @include bp(min-width, $large-min) {
+        margin-bottom: 0;
+    }
+
+    .input-group {
+        max-width: em(470);
+    }
+
+    input {
+        background: $color-secondary;
+        border-color: lighten($color-secondary, 10%);
+        color: $boulder;
+
+        &:focus {
+            border-color: $color-primary;
+            color: $white;
+        }
+    }
+
+    .button {
+        background: lighten($color-secondary, 10%);
+        color: $alto;
+
+        &:hover {
+            background: $color-primary;
+            color: $white;
+        }
+    }
+}

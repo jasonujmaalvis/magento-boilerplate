@@ -1,0 +1,29 @@
+<?php
+/**
+ * Language switcher template
+ *
+ * @see Mage_Page_Block_Switch
+ */
+?>
+<?php if(count($this->getStores())>1): ?>
+<div class="form-language js-slide-panel">
+    <label for="select-language">
+        <?php foreach ($this->getStores() as $_lang): ?>
+            <?php if($_lang->getId() == $this->getCurrentStoreId()): ?>
+                <?php echo $this->escapeHtml($_lang->getName()) ?>
+            <?php break; endif; ?>
+        <?php endforeach; ?>
+    </label>
+
+    <div class="field-cont">
+        <div class="style-select">
+            <select id="select-language" title="<?php echo $this->__('Your Language') ?>" onchange="window.location.href=this.value">
+            <?php foreach ($this->getStores() as $_lang): ?>
+                <?php $_selected = ($_lang->getId() == $this->getCurrentStoreId()) ? ' selected="selected"' : '' ?>
+                <option value="<?php echo $_lang->getCurrentUrl() ?>"<?php echo $_selected ?>><?php echo $this->escapeHtml($_lang->getName()) ?></option>
+            <?php endforeach; ?>
+            </select>
+        </div><!-- .style-select -->
+    </div><!-- .field-cont -->
+</div><!-- .form-language -->
+<?php endif; ?>

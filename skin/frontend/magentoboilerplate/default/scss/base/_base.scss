@@ -1,0 +1,126 @@
+// Must be 100% for off canvas to work
+html, body {
+    height: 100%;
+}
+
+// Set box-sizing globally to handle padding and border widths
+*,
+*:before,
+*:after {
+    @include box-sizing;
+}
+
+html,
+body {
+    font-size: $base-font-size;
+}
+
+// Default body styles
+body {
+    color: $body-font-color;
+    padding: 0;
+    margin: 0;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-style: $body-font-style;
+    line-height: $base-line-height; // Set to $base-line-height to take on browser default of 150%
+    position: relative;
+}
+
+img {
+    // Responsive images
+    max-width: 100%;
+    height: auto;
+
+    // IE fix bicubic scaling for images
+    -ms-interpolation-mode: bicubic;
+
+    // Get rid of gap under images by making them display: inline-block; by default
+    display: inline-block;
+    vertical-align: middle;
+}
+
+// Global resets for forms
+// Make sure textarea takes on height automatically
+textarea {
+    height: auto;
+    min-height: 50px;
+}
+
+// Make select elements 100% width by default
+select {
+    width: 100%;
+}
+
+// Typography resets
+div,
+figure,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+p {
+    margin-bottom: em(16);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+}
+
+address {
+    margin-bottom: em(10);
+}
+
+// Default Link Styles
+a {
+    color: $boulder;
+    text-decoration: none;
+    transition: all 0.1s ease-in-out 0s;
+
+    &:hover,
+    &:focus {
+        color: $color-secondary;
+        text-decoration: none;
+    }
+
+    &.link {
+        font-size: em(14);
+        border-bottom: 2px solid darken($concrete, 10%);
+    }
+
+    img {
+        border:none;
+    }
+}

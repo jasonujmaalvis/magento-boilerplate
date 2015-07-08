@@ -1,0 +1,47 @@
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+<head>
+    <?php echo $this->getChildHtml('head') ?>
+</head>
+
+<body<?php echo $this->getBodyClass()?' class="'.$this->getBodyClass().'"':'' ?>>
+    <?php echo $this->getChildHtml('after_body_start') ?>
+    <?php echo $this->getChildHtml('global_notices') ?>
+
+    <div class="page">
+        <?php echo $this->getChildHtml('header') ?>
+
+        <div class="container col2-right-layout">
+            <?php //echo $this->getChildHtml('breadcrumbs') ?>
+            <?php echo $this->getChildHtml('content_before') ?>
+
+            <div class="row">
+                <div class="column column-main">
+                    <?php echo $this->getChildHtml('global_messages') ?>
+                    <?php echo $this->getChildHtml('content') ?>
+                </div><!-- .column -->
+
+                <div class="column column-right">
+                    <?php echo $this->getChildHtml('right') ?>
+                </div><!-- .column -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+
+        <?php echo $this->getChildHtml('footer_before') ?>
+        <?php echo $this->getChildHtml('footer') ?>
+        <?php echo $this->getChildHtml('global_cookie_notice') ?>
+        <?php echo $this->getChildHtml('before_body_end_js'); ?>
+        <?php echo $this->getChildHtml('before_body_end') ?>
+    </div><!-- .page -->
+
+    <?php echo $this->getAbsoluteFooter() ?>
+</body>
+</html>

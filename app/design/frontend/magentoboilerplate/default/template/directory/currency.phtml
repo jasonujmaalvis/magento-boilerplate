@@ -1,0 +1,26 @@
+<?php
+/**
+ * Currency switcher
+ *
+ * @see Mage_Directory_Block_Currency
+ */
+?>
+<?php if($this->getCurrencyCount()>1): ?>
+<div class="currency-switcher js-slide-panel">
+    <label for="select-currency">
+        <?php echo Mage::app()->getLocale()->currency(Mage::app()->getStore()->getCurrentCurrencyCode())->getSymbol(); ?>
+    </label>
+
+    <div class="field-cont">
+        <div class="style-select">
+            <select id="select-currency" name="currency" title="<?php echo $this->__('Your Currency') ?>" onchange="setLocation(this.value)">
+                <?php foreach ($this->getCurrencies() as $_code => $_name): ?>
+                <option value="<?php echo $this->getSwitchCurrencyUrl($_code) ?>"<?php if($_code==$this->getCurrentCurrencyCode()): ?> selected="selected"<?php endif; ?>>
+                    <?php echo $_name ?> - <?php echo $_code ?>
+                </option>
+            <?php endforeach; ?>
+            </select>
+        </div><!-- .style-select -->
+    </div><!-- .field -->
+</div><!-- .currency-switcher -->
+<?php endif; ?>

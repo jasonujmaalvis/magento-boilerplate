@@ -1,0 +1,40 @@
+<?php
+/**
+ * Category view template
+ *
+ * @see Mage_Catalog_Block_Category_View
+ */
+?>
+<?php
+    $_helper   = $this->helper('catalog/output');
+    $_category = $this->getCurrentCategory();
+?>
+
+<?php /*
+<div class="page-title category-title">
+    <h1><?php echo $_helper->categoryAttribute($_category, $_category->getName(), 'name') ?></h1>
+</div>
+*/ ?>
+
+<?php echo $this->getMessagesBlock()->getGroupedHtml() ?>
+
+<?php /*if($_description=$this->getCurrentCategory()->getDescription()): ?>
+    <div class="category-description std">
+        <?php echo $_helper->categoryAttribute($_category, $_description, 'description') ?>
+    </div>
+<?php endif;*/ ?>
+
+<?php if($this->isContentMode()): ?>
+
+    <?php echo $this->getCmsBlockHtml() ?>
+
+<?php elseif($this->isMixedMode()): ?>
+
+    <?php echo $this->getCmsBlockHtml() ?>
+    <?php echo $this->getProductListHtml() ?>
+
+<?php else: ?>
+
+    <?php echo $this->getProductListHtml() ?>
+
+<?php endif; ?>

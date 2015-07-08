@@ -1,0 +1,49 @@
+<?php
+    $_orders = $this->getOrders();
+?>
+
+<div class="account-block account-block-recent">
+    <div class="account-block-heading">
+        <h2><?php echo $this->__('Recent Orders'); ?></h2>
+
+        <?php if( sizeof($_orders->getItems()) > 0 ): ?>
+            <a class="link" href="<?php echo $this->getUrl('sales/order/history') ?>">
+                <?php echo $this->__('View All') ?>
+            </a>
+        <?php endif; ?>
+    </div><!-- .account-block-heading -->
+
+    <?php if( sizeof($_orders->getItems()) > 0 ): ?>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th><?php echo $this->__('Order') ?></th>
+                    <th><?php echo $this->__('Date') ?></th>
+                    <th><?php echo $this->__('Ship To') ?></th>
+                    <th><?php echo $this->__('Order Total') ?></th>
+                    <th><?php echo $this->__('Status') ?></th>
+                    <th>&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($_orders as $_order): ?>
+                    <tr>
+                        <td><?php echo $_order->getRealOrderId() ?></td>
+                        <td><?php echo $this->formatDate($_order->getCreatedAtStoreDate()) ?></td>
+                        <td><?php echo $_order->getShippingAddress() ? $this->escapeHtml($_order->getShippingAddress()->getName()) : '&nbsp;' ?></td>
+                        <td><?php echo $_order->formatPrice($_order->getGrandTotal()) ?></td>
+                        <td><em><?php echo $_order->getStatusLabel() ?></em></td>
+                        <td>
+                            <a href="<?php echo $this->getViewUrl($_order) ?>"><?php echo $this->__('View Order') ?></a>
+                            <?php if ($this->helper('sales/reorder')->canReorder($_order)) : ?>
+                                &nbsp;&nbsp;&nbsp;<a href="<?php echo $this->getReorderUrl($_order) ?>"><?php echo $this->__('Reorder') ?></a>
+                            <?php endif ?>
+                        </tr>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    <?php else: ?>
+        <p><?php echo $this->__('You have placed no orders.'); ?></p>
+    <?php endif; ?>
+</div><!-- .account-block -->

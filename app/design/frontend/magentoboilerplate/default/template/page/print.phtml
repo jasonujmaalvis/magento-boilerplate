@@ -1,0 +1,30 @@
+<?php
+/**
+ * Template for Mage_Page_Block_Html
+ */
+?>
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="<?php echo $this->getLang() ?>" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="<?php echo $this->getLang() ?>" class="no-js"> <!--<![endif]-->
+<head>
+    <?php echo $this->getChildHtml('head') ?>
+</head>
+
+<body class="page-print<?php echo $this->getBodyClass()?$this->getBodyClass():'' ?>">
+    <div>
+        <div class="print-head">
+            <img src="<?php echo $this->getPrintLogoUrl() ? $this->getPrintLogoUrl() : $this->getChild('header')->getLogoSrc() ?>" class="logo" alt="" />
+            <?php if ($this->getPrintLogoText()):?>
+                <address><?php echo nl2br($this->escapeHtml($this->getPrintLogoText())) ?></address>
+            <?php endif;?>
+        </div>
+        <?php echo $this->getChildHtml('content') ?>
+        <div class="buttons-set">
+            <button type="button" title="<?php echo $this->__('Close Window') ?>" class="button" onclick="window.close();"><span><span><?php echo $this->__('Close Window') ?></span></span></button>
+        </div>
+        <?php echo $this->getAbsoluteFooter() ?>
+    </div>
+</body>
+</html>

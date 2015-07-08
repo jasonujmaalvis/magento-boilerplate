@@ -1,0 +1,55 @@
+<?php
+    $_products = Mage::getSingleton('Mage_Reports_Block_Product_Viewed')->getItemsCollection();
+?>
+
+<?php if(count($_products)): ?>
+    <div class="product-viewed">
+        <div class="row products-grid">
+            <?php foreach ($_products as $_item): ?>
+                <div class="column product-item">
+                    <div class="product-item-image">
+                        <a href="<?php echo $this->getProductUrl($_item) ?>">
+                            <img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(388, 480); ?>" alt="<?php echo $this->escapeHtml($this->getProductName()) ?>" />
+                        </a>
+
+                        <div class="product-item-overlay">
+                            <a class="link" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"></a>
+
+                            <?php if ($this->helper('wishlist')->isAllow()) : ?>
+                                <a href="<?php echo $this->helper('wishlist')->getAddUrl($_item) ?>" title="<?php echo $this->__('Add to Wishlist') ?>">
+                                    <?php echo $this->__('Add to Wishlist') ?>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if($_compareUrl = $this->getAddToCompareUrl($_item)): ?>
+                                <a href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare') ?>">
+                                    <?php echo $this->__('Add to Compare') ?>
+                                </a>
+                            <?php endif; ?>
+
+                            <?php if($_item->isSaleable() && !$_item->canConfigure()): ?>
+                                <a class="button" href="<?php echo $this->getAddToCartUrl($_item) ?>" title="<?php echo $this->__('Add to Cart') ?>">
+                                    <?php echo $this->__('Add to Cart') ?>
+                                </a>
+                            <?php elseif(!$_item->isSaleable()): ?>
+                                <span class="button"><?php echo $this->__('Out of stock') ?></span>
+                            <?php endif; ?>
+                        </div><!-- .product-item-overlay -->
+                    </div><!-- .product-item-image -->
+
+                    <div class="product-item-info">
+                        <h2 class="product-item-name">
+                            <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>">
+                                <?php echo $this->escapeHtml($_item->getName()) ?>
+                            </a>
+                        </h2><!-- .product-item-name -->
+
+                        <?php echo $this->getPriceHtml($_item, true); ?>
+                    </div><!-- .product-item-info -->
+                </div><!-- .column -->
+            <?php endforeach; ?>
+        </div>
+    </div><!-- .product-viewed -->
+<?php else: ?>
+    <p><?php echo $this->__('You currently have no recently viewed items.'); ?></p>
+<?php endif; ?>

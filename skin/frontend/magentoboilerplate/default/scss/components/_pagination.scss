@@ -1,0 +1,22 @@
+// -------------------------------------------------------------- //
+// Pagination --------------------------------------------------- //
+// -------------------------------------------------------------- //
+.pagination {
+    li {
+        float: left;
+        margin-left: em(4);
+
+        &.current span {
+            background-color: $concrete;
+        }
+    }
+
+    a,
+    span {
+        display: block;
+        font-size: em(14);
+        padding: 0 em(8, 14);
+        color: $boulder;
+        border-radius: 3px;
+    }
+}

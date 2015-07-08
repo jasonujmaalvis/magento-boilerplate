@@ -1,0 +1,78 @@
+<?php if($this->getItems()->getSize()): ?>
+<div class="product-related">
+    <h2><?php echo $this->__('Recommended'); ?></h2>
+
+    <div class="row products-grid">
+        <?php foreach($this->getItems() as $_item): ?>
+            <div class="column product-item">
+                <div class="product-item-image">
+                    <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($_item, 'thumbnail')->resize(388, 480) ?>" alt="<?php echo $this->escapeHtml($_item->getName()) ?>" />
+                    </a>
+
+                    <div class="product-item-overlay">
+                        <a class="link" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"></a>
+
+                        <?php if(!$_item->isComposite() && $_item->isSaleable()): ?>
+                            <?php if (!$_item->getRequiredOptions()): ?>
+                                <?php
+                                    $_add    = $this->__('Add To Order');
+                                    $_remove = $this->__('Remove From Order');
+                                ?>
+                                <span class="js-related-select" id="related-checkbox<?php echo $_item->getId() ?>" data-value="<?php echo $_item->getId() ?>" data-add="<?php echo $_add; ?>" data-remove="<?php echo $_remove; ?>">
+                                    <?php echo $_add; ?>
+                                </span>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <span><?php echo $this->__('Out of stock') ?></span>
+                        <?php endif; ?>
+                    </div><!-- .product-item-overlay -->
+                </div><!-- .product-item-image -->
+
+                <div class="product-item-info">
+                    <?php echo $this->getPriceHtml($_item, true, '-related') ?>
+                </div><!-- .product-item-info -->
+            </div><!-- .column -->
+        <?php endforeach ?>
+    </div><!-- .row -->
+
+    <script type="text/javascript">
+    //<![CDATA[
+    $$('.js-related-select').each(function(elem){
+        Event.observe(elem, 'click', addRelatedToProduct);
+    });
+
+    var relatedProductsCheckFlag = false;
+
+    function addRelatedToProduct(){
+        var selects = $$('.js-related-select');
+        var values = [];
+
+        // toggle the active class
+        this.toggleClassName('active');
+
+        // update the txt
+        if(this.hasClassName('active')){
+            var remove = this.readAttribute('data-remove');
+            this.update('<span>' + remove + '</span>');
+        } else {
+            var add = this.readAttribute('data-add');
+            this.update('<span>' + add + '</span>');
+        }
+
+        // push values to the array
+        for(var i=0; i < selects.length; i++){
+            if(selects[i].hasClassName('active')) {
+                values.push(selects[i].readAttribute('data-value'));
+            }
+        }
+
+        // join values to hidden form input field
+        if($('related-products-field')){
+            $('related-products-field').value = values.join(',');
+        }
+    }
+    //]]>
+    </script>
+</div><!-- .product-related -->
+<?php endif ?>

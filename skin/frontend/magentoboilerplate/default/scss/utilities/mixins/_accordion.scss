@@ -1,0 +1,47 @@
+// -------------------------------------------------------------- //
+// Accordion ---------------------------------------------------- //
+// -------------------------------------------------------------- //
+@mixin accordion(){
+    border-bottom: 1px solid $concrete;
+
+    dl {
+        > dt,
+        > dd {
+            font-size: em(14);
+        }
+
+        > dt {
+            position: relative;
+            border-top: 1px solid $concrete;
+            padding: em(15, 14) 0;
+            cursor: pointer;
+
+            span:after {
+                content: "";
+                display: block;
+                position: absolute;
+                top: 50%;
+                right: 5px;
+                margin-top: -5px;
+                @include sprite-2x($sprite__icon-plus, $sprite-2x__icon-plus);
+            }
+        }
+
+        dd {
+            display: none;
+            padding-bottom: em(15, 14);
+        }
+    }
+
+    &.accordion-open {
+        > dl {
+            > dt.open span:after {
+                 @include sprite-2x($sprite__icon-minus, $sprite-2x__icon-minus);
+            }
+
+            > dd.open {
+                display: block;
+            }
+        }
+    }
+}

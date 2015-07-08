@@ -1,0 +1,29 @@
+<div class="block block-account-nav">
+    <p class="block-subtitle block-subtitle--nav"><span><?php echo $this->__('Account Navigation'); ?></span></p>
+
+    <ul>
+        <?php
+            $_links = $this->getLinks();
+            $_index = 1;
+            $_count = count($_links);
+        ?>
+
+        <?php foreach ($_links as $_link): ?>
+            <?php $_last = ($_index++ >= $_count); ?>
+
+            <?php if ($this->isActive($_link)): ?>
+                <li class="current<?php echo ($_last ? ' last' : '') ?>">
+                    <a href="<?php echo $_link->getUrl() ?>">
+                        <span><strong><?php echo $_link->getLabel() ?></strong></span>
+                    </a>
+                </li>
+            <?php else: ?>
+                <li<?php echo ($_last ? ' class="last"' : '') ?>>
+                    <a href="<?php echo $_link->getUrl() ?>">
+                        <span><?php echo $_link->getLabel() ?></span>
+                    </a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div><!-- .block-account-nav -->

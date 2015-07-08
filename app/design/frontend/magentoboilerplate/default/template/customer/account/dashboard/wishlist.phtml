@@ -1,0 +1,70 @@
+<?php
+/* @var $this Mage_Wishlist_Block_Customer_Wishlist */
+?>
+
+<?php if ($this->helper('wishlist')->isAllow()) : ?>
+    <?php if ($this->hasWishlistItems()): ?>
+        <?php
+            $_wishlistCount = $this->getData('wishlist_count');
+        ?>
+
+        <div class="account-block account-block-wishlist">
+            <div class="account-block-heading">
+                <h2><?php echo $this->__('Wishlist'); ?></h2>
+
+                <a class="link" href="<?php echo $this->helper('wishlist')->getListUrl() ?>" title="<?php echo $this->__('View All') ?>">
+                    <?php echo $this->__('View All') ?>
+                </a>
+            </div><!-- .account-block-heading -->
+
+            <div class="row products-grid">
+                <?php $i = 0; foreach ($this->getWishlistItems() as $_item): ?>
+                    <?php
+                        $product = $_item->getProduct();
+                        if($i == $_wishlistCount){ break; } // only show so many products set in customer.xml
+                    ?>
+
+                    <div class="column product-item">
+                        <div class="product-item-image">
+                            <a href="<?php echo $this->getProductUrl($_item) ?>" title="<?php echo $this->escapeHtml($product->getName()) ?>">
+                                <img src="<?php echo $this->helper('catalog/image')->init($product, 'small_image')->resize(388, 480); ?>" alt="<?php echo $this->escapeHtml($product->getName()) ?>" />
+                            </a>
+
+                            <div class="product-item-overlay">
+                                <a class="link" href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>"></a>
+
+                                <a href="<?php echo $this->getItemRemoveUrl($_item) ?>" title="<?php echo $this->__('Remove this Item') ?>" onclick="return confirm('<?php echo $this->__('Are you sure you would like to remove this item from the wishlist?') ?>');">
+                                    <?php echo $this->__('Remove this Item') ?>
+                                </a>
+
+                                <?php if($_compareUrl = $this->getAddToCompareUrl($_item)): ?>
+                                    <a href="<?php echo $_compareUrl ?>" title="<?php echo $this->__('Add to Compare') ?>">
+                                        <?php echo $this->__('Add to Compare') ?>
+                                    </a>
+                                <?php endif; ?>
+
+                                <?php if($product->isSaleable() && !$product->canConfigure()): ?>
+                                    <a class="button" href="<?php echo $this->getAddToCartUrl($product) ?>" title="<?php echo $this->__('Add to Cart') ?>">
+                                        <?php echo $this->__('Add to Cart') ?>
+                                    </a>
+                                <?php elseif(!$product->isSaleable()): ?>
+                                    <span class="button"><?php echo $this->__('Out of stock') ?></span>
+                                <?php endif; ?>
+                            </div><!-- .product-item-overlay -->
+                        </div><!-- .product-image -->
+
+                        <div class="product-item-info">
+                            <h2 class="product-item-name">
+                                <a href="<?php echo $_item->getProductUrl() ?>" title="<?php echo $this->escapeHtml($_item->getName()) ?>">
+                                    <?php echo $this->escapeHtml($product->getName()) ?>
+                                </a>
+                            </h2><!-- .product-item-name -->
+
+                            <?php echo $this->getPriceHtml($product, true) ?>
+                        </div><!-- .product-item-info -->
+                    </div><!-- .column -->
+                <?php $i++; endforeach; ?>
+            </div><!-- .item-cont -->
+        </div><!-- .account-block -->
+    <?php endif ?>
+<?php endif ?>

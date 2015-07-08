@@ -1,0 +1,94 @@
+// -------------------------------------------------------------- //
+// Product Item ------------------------------------------------- //
+// -------------------------------------------------------------- //
+.product-item {
+    .product-item-image {
+        display: block;
+        position: relative;
+    }
+
+    .product-item-info {
+        text-align: center;
+        padding: em(20) 0 em(10);
+    }
+
+    .product-item-name {
+        font-weight: normal;
+        font-size: em(16);
+        margin-bottom: em(10, 16);
+
+        a {
+            color: $color-secondary;
+        }
+    }
+
+    .price-box {
+        font-size: em(14);
+        color: $boulder;
+
+        p {
+            display: inline-block;
+            padding: 0 em(5, 14);
+        }
+    }
+
+    .old-price {
+        .price {
+            text-decoration: line-through;
+        }
+    }
+
+    .product-item-overlay,
+    .product-item-overlay .link {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .product-item-overlay {
+        opacity: 0;
+        transition: opacity 0.5s ease 0s;
+        background-color: rgba(0, 0, 0, 0.55);
+        color: $white;
+        font-size: em(12);
+        padding: em(20);
+        text-transform: uppercase;
+
+        a {
+            color: $white;
+        }
+
+        a,
+        span {
+            position: relative;
+            display: block;
+            margin-bottom: em(5, 12);
+        }
+
+        .button {
+            position: absolute;
+        }
+    }
+
+    .button {
+        bottom: em(20);
+        left: em(20);
+        background: none;
+        border: 1px solid $white;
+        padding: em(9, 12) em(30, 12);
+
+        &.active,
+        &:hover {
+            background: $white;
+            color: $color-secondary;
+        }
+    }
+
+    &:hover {
+        .product-item-overlay {
+            opacity: 1;
+        }
+    }
+}

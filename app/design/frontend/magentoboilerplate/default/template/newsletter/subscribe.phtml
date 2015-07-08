@@ -1,0 +1,19 @@
+<div class="block-subscribe">
+    <p><?php echo $this->__('Subscribe to our newsletter to receive news and offers by email. We don\'t do spam, just the good stuff.'); ?></p>
+
+    <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+        <div class="input-group">
+            <input type="email" autocapitalize="off" autocorrect="off" spellcheck="false" name="email" id="newsletter" title="<?php echo $this->__('Enter your email address...') ?>" placeholder="<?php echo $this->__('Enter your email address...') ?>" class="input-text required-entry validate-email" />
+
+            <span class="input-group-btn">
+                <button type="submit" title="<?php echo $this->__('Subscribe') ?>" class="button"><span><span><?php echo $this->__('Subscribe') ?></span></span></button>
+            </span>
+        </div><!-- .input-group -->
+    </form>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+    </script>
+</div><!-- .block-subscribe -->

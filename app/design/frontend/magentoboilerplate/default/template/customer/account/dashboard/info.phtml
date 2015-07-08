@@ -1,0 +1,17 @@
+<div class="col2-set">
+    <div class="col-1">
+        <div class="box">
+            <div class="box-title">
+                <h3><?php echo $this->__('Contact Information') ?></h3>
+                <a href="<?php echo $this->getUrl('customer/account/edit') ?>"><?php echo $this->__('Edit') ?></a>
+            </div>
+            <div class="box-content">
+                <p>
+                    <?php echo $this->escapeHtml($this->getCustomer()->getName()) ?><br />
+                    <?php echo $this->escapeHtml($this->getCustomer()->getEmail()) ?><br />
+                    <a href="<?php echo $this->getChangePasswordUrl() ?>"><?php echo $this->__('Change Password') ?></a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

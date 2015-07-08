@@ -1,0 +1,31 @@
+<?php
+    $_subscribed = $this->getSubscriptionObject()->isSubscribed();
+?>
+
+<div class="account-block account-block-bg account-block-subscribe">
+    <h2><?php echo $this->__('Newsletters'); ?></h2>
+    <p class="form-instructions"><?php echo $this->__('Subscribe to our newsletter to receive exclusive news and offers by email.'); ?></p>
+
+    <form action="<?php echo $this->getUrl('newsletter/manage/save') ?>" method="post" id="newsletter-form-validate">
+        <?php echo $this->getBlockHtml('formkey')?>
+
+        <ul class="form-list">
+            <li class="control">
+                <div class="input-box">
+                    <input id="is_subscribed" class="checkbox" type="checkbox" name="is_subscribed" value="1" title="<?php echo $this->__('Email Subscription') ?>"<?php if($_subscribed): ?> checked="checked"<?php endif; ?> />
+                </div>
+                <label for="is_subscribed"><?php echo $this->__('Send me the occasional email') ?></label>
+            </li>
+        </ul>
+    </form>
+
+    <script type="text/javascript">
+    //<![CDATA[
+        jQuery('#is_subscribed').on('change', function(){
+            jQuery('#newsletter-form-validate').submit();
+        });
+
+        var dataForm = new VarienForm('newsletter-form-validate', true);
+    //]]>
+    </script>
+</div><!-- .account-block -->

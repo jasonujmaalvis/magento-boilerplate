@@ -1,0 +1,26 @@
+<?php
+    $_deliveryAdd = Mage::getSingleton('customer/session')->getCustomer()->getDefaultShipping();
+    $_billingAdd = Mage::getSingleton('customer/session')->getCustomer()->getDefaultBilling();
+?>
+
+<div class="account-block account-block-bg account-block-addresses">
+    <div class="row">
+        <div class="column">
+            <h2><?php echo $this->__('Delivery Address'); ?></h2>
+
+            <address><?php echo $this->getPrimaryShippingAddressHtml() ?></address>
+            <a class="link" href="<?php echo Mage::getUrl('customer/address/edit', array('_secure'=>true, 'id'=>$_deliveryAdd)); ?>">
+                <?php echo $this->__('Change Shipping Address') ?>
+            </a>
+        </div><!-- .column -->
+
+        <div class="column">
+            <h2><?php echo $this->__('Billing Address'); ?></h2>
+
+            <address><?php echo $this->getPrimaryBillingAddressHtml() ?></address>
+            <a class="link" href="<?php echo Mage::getUrl('customer/address/edit', array('_secure'=>true, 'id'=>$_billingAdd)); ?>">
+                <?php echo $this->__('Change Billing Address') ?>
+            </a>
+        </div><!-- .column -->
+    </div><!-- .row -->
+</div><!-- .account-block -->

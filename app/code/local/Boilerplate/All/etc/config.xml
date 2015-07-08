@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Boilerplate_All>
+            <version>0.0.1</version>
+        </Boilerplate_All>
+    </modules>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <boilerplate_all>
+                    <file>boilerplate/all/all.xml</file>
+                </boilerplate_all>
+            </updates>
+        </layout>
+    </adminhtml>
+
+    <frontend>
+        <layout>
+            <updates>
+                <boilerplate_all>
+                    <file>boilerplate/all/all.xml</file>
+                </boilerplate_all>
+            </updates>
+        </layout>
+    </frontend>
+
+    <global>
+        <blocks>
+            <customer>
+                <rewrite>
+                    <account_navigation>Boilerplate_All_Block_Account_Navigation</account_navigation>
+                </rewrite>
+            </customer>
+        </blocks>
+
+        <resources>
+            <boilerplate_all_setup>
+                <setup>
+                    <module>Boilerplate_All</module>
+                </setup>
+            </boilerplate_all_setup>
+        </resources>
+    </global>
+
+    <default>
+        <boilerplate_all>
+            <social_media>
+                <enabled_links>1</enabled_links>
+                <enabled_share>1</enabled_share>
+                <twitter_username>alvisjason</twitter_username>
+            </social_media>
+        </boilerplate_all>
+    </default>
+</config>

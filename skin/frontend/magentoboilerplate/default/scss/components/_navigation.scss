@@ -1,0 +1,45 @@
+// -------------------------------------------------------------- //
+// Layered Navigation ------------------------------------------- //
+// -------------------------------------------------------------- //
+.block-layered-nav {
+    .block-content {
+        @include accordion;
+    }
+
+    li {
+        margin: em(5) 0;
+
+        .count {
+            color: #bcbcbc;
+        }
+    }
+
+    .block-subtitle--filter {
+        position: relative;
+        cursor: pointer;
+        background-color: $color-secondary;
+        color: $white;
+        font-weight: bold;
+        font-size: em(14);
+        padding: em(10, 14) em(15, 14);
+        margin-bottom: 1px;
+
+        span:after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            margin-top: -5px;
+            @include sprite-2x($sprite__icon-plus-white, $sprite-2x__icon-plus-white);
+        }
+
+        &.active span:after {
+            @include sprite-2x($sprite__icon-minus-white, $sprite-2x__icon-minus-white);
+        }
+
+        @include bp(min-width, $large-min) {
+            display: none;
+        }
+    }
+}
