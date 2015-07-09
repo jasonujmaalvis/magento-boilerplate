@@ -44,6 +44,16 @@
         <!-- Load in js at the end of the page -->
         <reference name="before_body_end_js">
             <action method="addItem"><type>skin_js</type><name>js/lib/enquire.min.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.carousel.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.autorefresh.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.lazyload.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.autoheight.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.video.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.animate.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.autoplay.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.navigation.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.hash.js</name></action>
+            <action method="addItem"><type>skin_js</type><name>js/lib/owlcarousel/owl.support.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/lib/toggle.single.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/core.js</name></action>
         </reference>
