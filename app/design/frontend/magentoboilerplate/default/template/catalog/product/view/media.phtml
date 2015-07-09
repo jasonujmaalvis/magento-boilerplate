@@ -21,37 +21,55 @@
                 </div>
             <?php endif; ?>
 
-            <?php foreach ($this->getGalleryImages() as $_image): ?>
+            <?php $i = 0; foreach ($this->getGalleryImages() as $_image): ?>
                 <?php
                     $_imageUrl = $this->helper('catalog/image')
                                       ->init($_product, 'image', $_image->getFile())
                                       ->keepFrame(false)
                                       ->constrainOnly(true)
                                       ->resize(1200);
+
+                    $_imageUrlZoom = $this->helper('catalog/image')
+                                      ->init($_product, 'image', $_image->getFile())
+                                      ->keepFrame(false)
+                                      ->constrainOnly(true)
+                                      ->resize(1560);
                 ?>
 
                 <div class="item">
-                    <img src="<?php echo $_imageUrl; ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>" title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
+                    <img
+                        id="image-<?php echo $i; ?>"
+                        class="gallery-image<?php if($i == 0): ?> visible<?php endif; ?>"
+                        src="<?php echo $_imageUrl; ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
+                        data-zoom-image="<?php echo $_imageUrlZoom; ?>"
+                        alt="<?php echo $this->escapeHtml($this->getImageLabel()); ?>"
+                        title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
                 </div>
-            <?php endforeach; ?>
+            <?php $i++; endforeach; ?>
         </div><!-- .owl-carousel -->
     </div><!-- .product-image -->
 
     <?php if (count($this->getGalleryImages()) > 0): ?>
         <div class="more-views">
             <div class="owl-carousel owl-theme">
-            <?php $i = 0; foreach ($this->getGalleryImages() as $_image): ?>
-                <?php
-                if (($filterClass = $this->getGalleryFilterHelper()) && ($filterMethod = $this->getGalleryFilterMethod()) && !Mage::helper($filterClass)->$filterMethod($_product, $_image)):
-                    continue;
-                endif;
-                ?>
-                <div class="item" data-image-index="<?php echo $i; ?>">
-                    <a href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>">
-                        <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
-                    </a>
-                </div>
-            <?php $i++; endforeach; ?>
+                <?php if ($_product->getImage() == 'no_selection'): ?>
+                    <?php $i = 1; ?>
+                <?php else: ?>
+                    <?php $i = 0; ?>
+                <?php endif; ?>
+
+                <?php foreach ($this->getGalleryImages() as $_image): ?>
+                    <?php
+                    if (($filterClass = $this->getGalleryFilterHelper()) && ($filterMethod = $this->getGalleryFilterMethod()) && !Mage::helper($filterClass)->$filterMethod($_product, $_image)):
+                        continue;
+                    endif;
+                    ?>
+                    <div class="item" data-image-index="<?php echo $i; ?>">
+                        <a href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>">
+                            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
+                        </a>
+                    </div>
+                <?php $i++; endforeach; ?>
             </div><!-- .owl-carousel -->
         </div>
     <?php endif; ?>
