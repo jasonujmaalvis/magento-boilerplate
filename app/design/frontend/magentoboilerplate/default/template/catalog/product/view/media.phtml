@@ -17,11 +17,23 @@
         <div class="owl-carousel owl-theme">
             <?php if ($_product->getImage() == 'no_selection'): ?>
                 <div class="item">
-                    <img src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>" alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>" title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
+                    <img
+                        class="gallery-image visible"
+                        src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"
+                        alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
+                        title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
                 </div>
             <?php endif; ?>
 
-            <?php $i = 0; foreach ($this->getGalleryImages() as $_image): ?>
+            <?php
+                if ($_product->getImage() == 'no_selection'){
+                    $i = 1;
+                } else {
+                    $i = 0;
+                }
+            ?>
+
+            <?php foreach ($this->getGalleryImages() as $_image): ?>
                 <?php
                     $_imageUrl = $this->helper('catalog/image')
                                       ->init($_product, 'image', $_image->getFile())
@@ -52,11 +64,13 @@
     <?php if (count($this->getGalleryImages()) > 0): ?>
         <div class="more-views">
             <div class="owl-carousel owl-theme">
-                <?php if ($_product->getImage() == 'no_selection'): ?>
-                    <?php $i = 1; ?>
-                <?php else: ?>
-                    <?php $i = 0; ?>
-                <?php endif; ?>
+                <?php
+                    if ($_product->getImage() == 'no_selection'){
+                        $i = 1;
+                    } else {
+                        $i = 0;
+                    }
+                ?>
 
                 <?php foreach ($this->getGalleryImages() as $_image): ?>
                     <?php
@@ -64,10 +78,8 @@
                         continue;
                     endif;
                     ?>
-                    <div class="item" data-image-index="<?php echo $i; ?>">
-                        <a href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>">
-                            <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
-                        </a>
+                    <div class="item<?php if($i == 0): ?> visible<?php endif; ?>">
+                        <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(160, 130); ?>" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
                     </div>
                 <?php $i++; endforeach; ?>
             </div><!-- .owl-carousel -->

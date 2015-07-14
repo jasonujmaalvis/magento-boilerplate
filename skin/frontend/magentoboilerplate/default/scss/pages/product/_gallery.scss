@@ -3,4 +3,9 @@
 // -------------------------------------------------------------- //
 .product-img-box {
     // to do
+    width: em(800);
+
+    .more-views .item.visible {
+        border: 2px solid red;
+    }
 }

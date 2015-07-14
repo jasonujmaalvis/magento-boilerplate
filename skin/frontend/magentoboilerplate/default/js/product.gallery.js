@@ -9,7 +9,11 @@ var ProductGallery = (function ($) {
         settings: {
             productImageBox: $(".product-img-box"),
             zoomEnabled:     Modernizr.mq("screen and (min-width:" + bp + "px)"),
-            zoomThreshold:   20
+            zoomThreshold:   20,
+            duration:        300,
+            moving:          false,
+            owlOne:          null,
+            owlTwo:          null
         },
 
         init: function() {
@@ -19,20 +23,19 @@ var ProductGallery = (function ($) {
             this.galleryTwo();
             this.enquire();
             this.resizeHandler();
-            this.bindUIActions();
             this.bindWindowActions();
         },
 
         galleryOne: function() {
-            var owl = s.productImageBox.find(".product-image .owl-carousel");
+            s.owlOne = s.productImageBox.find(".product-image .owl-carousel");
 
-            if(owl.length){
-                owl.owlCarousel({
+            if(s.owlOne.length){
+                s.owlOne.owlCarousel({
                     items: 1,
                     animateOut: 'fadeOut',
                     mouseDrag: false,
                     pullDrag: false,
-                    nav: false,
+                    nav: true,
                     responsive:{
                         0: {
                             dots: true
@@ -41,19 +44,78 @@ var ProductGallery = (function ($) {
                             dots: false
                         }
                     }
+                }).on("changed.owl.carousel", function (e) {
+                    if (!s.moving) {
+                        // if the no selection image exists the index is different as
+                        // we have 1 extra image in owlOne than we do in owlTwo
+                        var index = ($(".js-gallery-image-no-selection").length) ? e.item.index - 1 : e.item.index;
+
+                        // set flag
+                        s.moving = true;
+
+                        // move owlTwo
+                        s.owlTwo.trigger("to.owl.carousel", [index, s.duration, true]);
+
+                        // class changes for styling purposes
+                        s.owlTwo.find(".visible").removeClass("visible");
+                        s.owlTwo.find(".owl-item").eq(index).find(".item").addClass("visible");
+
+                        // create new zoom on the new image
+                        ProductGallery.zoomCreate($(e.target).find(".owl-item").eq(index).find("img"));
+
+                        // remove flag
+                        s.moving = false;
+                    }
                 });
             }
         },
 
         galleryTwo: function() {
-            var owl = s.productImageBox.find(".more-views .owl-carousel");
+            s.owlTwo = s.productImageBox.find(".more-views .owl-carousel");
 
-            if(owl.length){
-                owl.owlCarousel({
-                    margin: 20,
-                    nav: true,
+            if(s.owlTwo.length){
+                s.owlTwo.owlCarousel({
+                    margin: 10,
+                    nav: false,
                     dots: false,
                     items: 3
+                }).on("click", ".owl-item", function () {
+                    // if the no selection image exists the index is different as
+                    // we have 1 extra image in owlOne than we do in owlTwo
+                    var _this = $(this),
+                        index = ($(".js-gallery-image-no-selection").length) ? _this.index() + 1 : _this.index();
+
+                    // move owlOne
+                    s.owlOne.trigger("to.owl.carousel", [index, s.duration, true]);
+
+                    // class changes for styling purposes
+                    _this.parent().find(".visible").removeClass("visible");
+                    _this.find(".item").addClass("visible");
+
+                    // create new zoom on the new image
+                    ProductGallery.zoomCreate(s.owlOne.find(".owl-item").eq(index).find("img"));
+                }).on("changed.owl.carousel", function (e) {
+                    if (!s.moving) {
+                        // if the no selection image exists the index is different as
+                        // we have 1 extra image in owlOne than we do in owlTwo
+                        var index = ($(".js-gallery-image-no-selection").length) ? e.item.index + 1 : e.item.index;
+
+                        // set flag
+                        s.moving = true;
+
+                        // move owlOne
+                        s.owlOne.trigger("to.owl.carousel", [index, s.duration, true]);
+
+                        // class changes for styling purposes
+                        $(e.target).find(".visible").removeClass("visible");
+                        $(e.target).find(".owl-item").eq(index).find(".item").addClass("visible");
+
+                        // create new zoom on the new image
+                        ProductGallery.zoomCreate(s.owlOne.find(".owl-item").eq(index).find("img"));
+
+                        // remove flag
+                        s.moving = false;
+                    }
                 });
             }
         },
@@ -64,6 +126,9 @@ var ProductGallery = (function ($) {
         },
 
         zoomCreate: function(image) {
+            // destroy any zooms
+            this.zoomDestroy();
+
             // zoom not enabled || no image found
             if(!s.zoomEnabled || image.length <= 0){
                 return;
@@ -99,23 +164,6 @@ var ProductGallery = (function ($) {
             $(".product-image-gallery").find(".gallery-image").removeData("elevateZoom");
         },
 
-        swapImage: function(targetImage) {
-            var owl = s.productImageBox.find(".product-image .owl-carousel");
-
-            // destroy any zooms
-            this.zoomDestroy();
-
-            // move target image to correct place
-            owl.trigger("to.owl.carousel", [targetImage, 300, true]);
-
-            // classes
-            owl.find(".gallery-image").removeClass("visible");
-            owl.find("#image-" + targetImage).addClass("visible");
-
-            // create new zoom on the new image
-            this.zoomCreate($("#image-" + targetImage));
-        },
-
         enquire: function(){
             enquire.register("screen and (min-width:" + bp + "px)", {
                 match: function() {
@@ -140,17 +188,6 @@ var ProductGallery = (function ($) {
                 resizeTimer = setTimeout(function () {
                     $(window).trigger("delayed-resize", e);
                 }, 250);
-            });
-        },
-
-        bindUIActions: function(){
-            // on clicking the thumbnails
-            s.productImageBox.find(".more-views .owl-item").on("click", function(e){
-                e.preventDefault();
-
-                var target = $(this).find(".item").data("image-index");
-
-                ProductGallery.swapImage(target);
             });
         },
 
