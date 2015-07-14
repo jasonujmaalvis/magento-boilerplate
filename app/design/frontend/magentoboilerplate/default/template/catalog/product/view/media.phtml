@@ -18,7 +18,7 @@
             <?php if ($_product->getImage() == 'no_selection'): ?>
                 <div class="item">
                     <img
-                        class="gallery-image visible"
+                        class="gallery-image visible js-gallery-image-no-selection"
                         src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"
                         alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
                         title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
