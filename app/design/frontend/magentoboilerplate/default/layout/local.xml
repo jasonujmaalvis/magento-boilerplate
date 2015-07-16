@@ -26,14 +26,10 @@
         <remove name="wishlist_sidebar"/>
 
         <reference name="head">
-            <action method="addItem"><type>skin_js</type><name>js/lib/jquery.min.js</name></action>
             <action method="addItem"><type>skin_js</type><name>js/lib/modernizr.custom.min.js</name></action>
         </reference>
 
         <reference name="root">
-            <!-- Enables us to load in JS at the end of the page -->
-            <block type="page/html_head" name="before_body_end_js" as="before_body_end_js" template="page/html/before_body_end_js.phtml" />
-
             <!-- Enabled us to load in blocks above the content / left / right columns -->
             <block type="page/html_wrapper" name="content_before" as="content_before" translate="label">
                 <label>Page Content Before</label>
