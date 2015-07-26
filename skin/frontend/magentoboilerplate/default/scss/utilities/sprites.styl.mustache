@@ -1,5 +1,5 @@
 {
-    'functions': false
+    'functions': true
 }
 
 {{#items}}
@@ -54,7 +54,7 @@ ${{name}} : {{px.x}} {{px.y}} {{px.offset_x}} {{px.offset_y}} {{px.width}} {{px.
 @mixin sprite-2x($sprite1x, $sprite2x){
     @include sprite($sprite1x);
 
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
+    @include if-min-resolution (1.5) {
         // Use the 2x image...
         @include sprite-image($sprite2x);
 
@@ -72,7 +72,7 @@ ${{name}} : {{px.x}} {{px.y}} {{px.offset_x}} {{px.offset_y}} {{px.width}} {{px.
     @include sprite-image($sprite1x);
     background-repeat: no-repeat;
 
-    @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi){
+    @include if-min-resolution (1.5) {
         @include sprite-image($sprite2x);
         background-size: nth($sprite1x, 7) nth($sprite1x, 8)
     }

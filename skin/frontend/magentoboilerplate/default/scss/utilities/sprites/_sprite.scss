@@ -59,3 +59,64 @@ $sprite__icon-search__total-height : 99px;
 $sprite__icon-search__image : '../images/sprites/sprite.png';
 $sprite__icon-search : 0px 0px 0px 0px 70px 70px 99px 99px '../images/sprites/sprite.png';
 
+@mixin sprite-width($sprite){
+    width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite){
+    height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite, $extra-offset-x: 0, $extra-offset-y: 0){
+    $sprite-offset-x: nth($sprite, 3) + $extra-offset-x;
+    $sprite-offset-y: nth($sprite, 4) + $extra-offset-y;
+    background-position: $sprite-offset-x $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+    $sprite-image: nth($sprite, 9);
+    background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite){
+    @include sprite-image($sprite);
+    @include sprite-position($sprite);
+    @include sprite-width($sprite);
+    @include sprite-height($sprite);
+}
+
+// -------------------------------------------------------------- //
+// Retina ------------------------------------------------------- //
+// -------------------------------------------------------------- //
+
+// @source bensmithett.com/goodbye-compass
+// @source https://github.com/Ensighten/spritesmith/issues/19#issuecomment-24843826
+
+// Retina sprite full works
+// @include sprite-2x($sprite__twitter, $sprite-2x__twitter);
+@mixin sprite-2x($sprite1x, $sprite2x){
+    @include sprite($sprite1x);
+
+    @include if-min-resolution (1.5) {
+        // Use the 2x image...
+        @include sprite-image($sprite2x);
+
+        // ...but set background-size to the size of the 1x image...
+        background-size: nth($sprite1x, 7) nth($sprite1x, 8);
+    }
+}
+
+// Retina sprite background-image only
+// Once this is set you can use the position, height & width mixins individually with 1x values
+// (e.g. if you only want to set a new background-position on hover, don't need to re-set background-image or you want to adjust the background position)
+// @include sprite-2x-image($sprite__twitter, $sprite-2x__twitter);
+// @include sprite-position($sprite__twitter, 30, 5);
+@mixin sprite-2x-image($sprite1x, $sprite2x){
+    @include sprite-image($sprite1x);
+    background-repeat: no-repeat;
+
+    @include if-min-resolution (1.5) {
+        @include sprite-image($sprite2x);
+        background-size: nth($sprite1x, 7) nth($sprite1x, 8)
+    }
+}
