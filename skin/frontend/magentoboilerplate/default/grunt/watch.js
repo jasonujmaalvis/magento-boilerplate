@@ -6,7 +6,7 @@ module.exports = {
         }
     },
     sprite: {
-        files: ['images/sprites/core-src/*.png', 'images/sprites/core-src-2x/*.png'],
+        files: ['images/sprites/source/*.png', 'images/sprites/source-2x/*.png'],
         tasks: ['sprite'],
         options: {
             livereload: true
