@@ -2,9 +2,6 @@
     "name": "magento-boilerplate",
     "version": "1.0.0",
     "description": "RWD Magento Boilerplate",
-    "scripts": {
-        "test": "npm test"
-    },
     "repository": {
         "type": "git",
         "url": "https://github.com/jasonalvis/magento-boilerplate"
