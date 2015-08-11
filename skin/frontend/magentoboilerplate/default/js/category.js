@@ -5,12 +5,12 @@ var SiteCategory = (function ($) {
     var s;
 
     return {
-        settings: {
-            bpLarge: 64.0625
+        settings: function() {
+            this.bpLarge = 64.0625;
         },
 
         init: function() {
-            s = this.settings;
+            s = new this.settings();
 
             this.toggleLayeredNav();
         },

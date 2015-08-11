@@ -5,15 +5,15 @@ var SiteCore = (function ($) {
     var s;
 
     return {
-        settings: {
-            lastScrollTop:      0,
-            productImageBox:    $(".product-img-box"),
-            siteBar:            $(".page-bar"),
-            siteBarPanel:       null
+        settings: function() {
+            this.lastScrollTop   = 0;
+            this.productImageBox = $(".product-img-box");
+            this.siteBar         = $(".page-bar");
+            this.siteBarPanel    = null;
         },
 
         init: function() {
-            s = this.settings;
+            s = new this.settings();
 
             this.tabs();
             this.toggleContent();

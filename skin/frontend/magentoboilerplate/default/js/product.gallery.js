@@ -6,18 +6,18 @@ var ProductGallery = (function ($) {
         bp = 768;
 
     return {
-        settings: {
-            productImageBox: $(".product-img-box"),
-            zoomEnabled:     Modernizr.mq("screen and (min-width:" + bp + "px)"),
-            zoomThreshold:   20,
-            duration:        300,
-            moving:          false,
-            owlOne:          null,
-            owlTwo:          null
+        settings: function() {
+            this.productImageBox = $(".product-img-box");
+            this.zoomEnabled     = Modernizr.mq("screen and (min-width:" + bp + "px)");
+            this.zoomThreshold   = 20;
+            this.duration        = 300;
+            this.moving          = false;
+            this.owlOne          = null;
+            this.owlTwo          = null;
         },
 
         init: function() {
-            s = this.settings;
+            s = new this.settings();
 
             this.galleryOne();
             this.galleryTwo();
