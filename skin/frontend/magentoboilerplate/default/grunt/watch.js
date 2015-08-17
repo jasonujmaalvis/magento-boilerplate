@@ -18,5 +18,12 @@ module.exports = {
         options: {
             livereload: true
         }
+    },
+    scripts: {
+        files: ['js/**/*.js'],
+        tasks: ['jshint', 'concat', 'uglify'],
+        options: {
+            livereload: true
+        }
     }
 };
